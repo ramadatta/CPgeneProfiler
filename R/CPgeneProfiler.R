@@ -14,8 +14,6 @@
 CPgeneProfiler <- function(fastafiles_location){
 
   fastalocation <- fastafiles_location
-#fastalocation <- getwd()
-#fastalocation <- "/home/datta/Desktop/CPE/R_package/ARG-annot-20200406T084430Z-001/ARG-annot/test/Assemblies"
 
 # Downloading CPgene database
 # Specify URL where file is stored
