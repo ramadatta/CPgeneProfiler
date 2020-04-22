@@ -1,0 +1,22 @@
+Package: CPgeneProfiler
+Title: Profiles the Carbapenamase genes from the genome assemblies (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Sai Rama Sridatta",
+           family = "Prakki",
+           role = c("aut", "cre"),
+           email = "ramadatta.88@gmail.com",
+           comment = structure("YOUR-ORCID-ID", .Names = "ORCID"))
+Description: CPgene-profiler checks for a list of CarbaPenamase (CP) genes from a list of genome assemblies provided in fasta file format. It reports the profile of all the CP genes available in the genome assemblies in the format of simple heatmap. Apart from this, it also reports the presence of co-carriage of CP genes within an assembly. Other assembly statistics such as N50, N90, Assembly Size from the assembly are calculated and plots of length distribution of CP gene contigs from the list of assemblies are reported.
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr,
+	 tidyverse,
+	 UpSetR,
+	 scales,
+	 ape,
+	 Biostrings,
+	 reshape2,
+	 gridExtra
+RoxygenNote: 7.1.0
