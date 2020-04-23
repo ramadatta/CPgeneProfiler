@@ -15,7 +15,7 @@ CPgene-profiler checks for a list of CarbaPenamase (CP) genes from a list of
  assembly are calculated and plots of length distribution of CP gene contigs from
  the list of assemblies are reported.
 
-![Example of graphics created using the CPgeneProfiler](CPgeneProfiler_out.png)
+![Example of graphics created using the CPgeneProfiler](CPgeneProfiler_Output.png)
 
   ## Quick Start
 ```
