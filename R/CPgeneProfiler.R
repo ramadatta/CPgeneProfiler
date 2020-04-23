@@ -579,7 +579,7 @@ upset_plot <-
 #upset_plot
 ##SAVE UPSETR PLOT INTO A PDF
 
-tiff(
+grDevices::tiff(
   "filename.tiff",
   width = 1500,
   height = 2000,
@@ -590,7 +590,7 @@ heatMap_ggplot
 dev.off()
 
 # Save the plots in PDF
-pdf("CPgene-profiler.pdf", width = 8, height = 10)
+grDevices::pdf("CPgene-profiler.pdf", width = 8, height = 10)
 
 N50_plot
 N90_plot
