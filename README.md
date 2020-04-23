@@ -15,7 +15,9 @@ CPgene-profiler checks for a list of CarbaPenamase (CP) genes from a list of
  assembly are calculated and plots of length distribution of CP gene contigs from
  the list of assemblies are reported.
 
-## Quick Start
+![Example of graphics created using the CPgeneProfiler](CPgeneProfiler_out.png)
+
+  ## Quick Start
 ```
 % CPgeneProfiler("/path/Folder_with_Fasta/")
 ```
@@ -78,3 +80,10 @@ SameCP_SameContig.txt | Information of assemblies with same CP genes present in 
 	 reshape2,
 	 gridExtra
 
+## Version history
+
+version 0.1.0
+
+## References
+
+Jake R Conway, Alexander Lex, Nils Gehlenborg, UpSetR: an R package for the visualization of intersecting sets and their properties, Bioinformatics, Volume 33, Issue 18, 15 September 2017, Pages 2938–2940, https://doi.org/10.1093/bioinformatics/btx364
