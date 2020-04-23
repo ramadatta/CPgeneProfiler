@@ -43,11 +43,11 @@ https://github.com/ramadatta/CPgeneProfiler
 ```
 
 # Check installation
-Ensure you have the desired version:
+Ensure you have installed the package properly:
 ```
 ?CPgeneProfiler
 ```
-# CPgeneProfiling
+# Carbapenamase Gene Profiling
 
 ## Input Requirements
 * a folder with multiple FASTA files (can be in multiple contigs)
@@ -56,7 +56,7 @@ Ensure you have the desired version:
 
 * a folder "CPgene-profiler_Output" with the following files
 
-Extension | Description
+File | Description
 ----------|--------------
 assemblyStats.txt | A simple text file with N50, N90, Assembly Size for each assembly
 blastResults.filt.txt | Filtered blast results with contains contigs matching CPgenes with 100% identity and 100% coverage
