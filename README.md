@@ -73,7 +73,7 @@ DiffCP_SameContig.txt | Information of assemblies with different CP genes presen
 SameCP_DiffContig.txt | Information of assemblies with same CP genes present in different contigs
 SameCP_SameContig.txt | Information of assemblies with same CP genes present in same contigs
 
-## Requirements
+## Requirements (R-packages)
    dplyr,
 	 tidyverse,
 	 UpSetR,
@@ -82,6 +82,9 @@ SameCP_SameContig.txt | Information of assemblies with same CP genes present in 
 	 Biostrings,
 	 reshape2,
 	 gridExtra
+	 
+## Requirements (To be installed in Linux)
+Command line NCBI blast+ (program assumes blastn and makeblastdb commands are in /usr/bin/)
 
 ## Version history
 
