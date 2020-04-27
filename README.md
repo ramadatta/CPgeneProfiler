@@ -5,6 +5,9 @@ Generate a profile of carbapenamase genes from the genome assemblies
 ## Author
 [Prakki Sai Rama Sridatta](https://twitter.com/prakki_rama)
 
+## DOI
+[![DOI](https://zenodo.org/badge/257832752.svg)](https://zenodo.org/badge/latestdoi/257832752)
+
 ## Synopsis
 
 CPgene-profiler checks for a list of CarbaPenamase (CP) genes from a list of
