@@ -6,7 +6,7 @@ Generate a profile of carbapenamase genes from the genome assemblies
 [Prakki Sai Rama Sridatta](https://twitter.com/prakki_rama)
 
 ## DOI
-[![DOI](https://zenodo.org/badge/257832752.svg)](https://zenodo.org/badge/latestdoi/257832752)
+[![DOI](https://zenodo.org/badge/257832752.svg)](https://zenodo.org/record/3767556)
 
 ## Synopsis
 
