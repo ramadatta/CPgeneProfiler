@@ -1,4 +1,3 @@
-
 # CPgeneProfiler
 Generate a profile of carbapenamase genes from the genome assemblies
 
@@ -66,8 +65,14 @@ blastResults.filt.txt | Filtered blast results with contains contigs matching CP
 blastResults.txt | Blast Results of contigs against the CP genes
 Co-carriage_Report.txt | Information of Number of assemblies with the co-carriage broken down to category
 CPContigSizeDist.txt | Contig Size distribution
+CPgeneProfile.tiff | Carbapenamase Gene Profile in .tiff format
 CPgene-profiler.pdf | Plots of Assembly Stats, UpsetR Plots with co-carriage information in assemblies, Carbapenamase gene profile
 cp_presence-abence_matrix.csv | Presence-absence matrix of CP genes across assemblies
+N50_N90.pdf | N50, N90 vs Assembly Size plot
+NDM_Contig_Dist.tiff | NDM gene contig length distribution
+KPC_Contig_Dist.tiff | KPC gene contig length distribution
+OXA_Contig_Dist.tiff | OXA gene contig length distribution
+upSetR.pdf | intersection plot of samples based on Carbapenamase genes
 DiffCP_DiffContig.txt | Information of assemblies with different CP genes present in different contigs
 DiffCP_SameContig.txt | Information of assemblies with different CP genes present in same contigs 
 SameCP_DiffContig.txt | Information of assemblies with same CP genes present in different contigs
@@ -88,7 +93,7 @@ Command line NCBI blast+ (program assumes blastn and makeblastdb commands are in
 
 ## Version history
 
-version 0.1.0
+version 0.2.0
 
 ## References
 

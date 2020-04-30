@@ -13,7 +13,7 @@
 
 CPgeneProfiler <- function(fastafiles_location){
 
-  fastalocation <- fastafiles_location
+   fastalocation <- fastafiles_location
 
 # Downloading CPgene database
 # Specify URL where file is stored
@@ -51,7 +51,7 @@ system2(
   ),
   wait = TRUE,
 )
-blast_db_location = getwd() # fpr later use
+blast_db_location = getwd() # for later use
 
 ############--------GO TO ASSEMBLY FILES LOCATION------##########
 
@@ -178,7 +178,7 @@ for (i in 1:length(files)) {
 
 #Formatting BLAST results
 big_data  <- do.call(rbind.data.frame, datalist)
-#big_data
+big_data
 
 big_data$V1 <- as.character(big_data$V1)
 big_data$n50 <- as.numeric(as.character(big_data$n50))
@@ -200,8 +200,8 @@ write.table(
 
 # Assembly stat plots
 #detach("package:tidyr", unload=TRUE)
-N50_plot <-
-  ggplot2::ggplot(big_data, mapping = ggplot2::aes(x = assemblySize, y = N50)) + ggplot2::geom_point(size =
+pdf("N50_N90.pdf", width = 8, height = 10)
+print(ggplot2::ggplot(big_data, mapping = ggplot2::aes(x = assemblySize, y = N50)) + ggplot2::geom_point(size =
                                                                             3, colour = "#0072B2") +
   ggplot2::scale_x_continuous(labels = scales::unit_format(unit = "MB", scale = 1e-6),
                      breaks = scales::pretty_breaks(n = 10)) +
@@ -209,25 +209,30 @@ N50_plot <-
                      breaks = scales::pretty_breaks(n = 10)) +
   ggplot2::ggtitle("Assembly Size vs N50 plot") +
   ggplot2::theme_bw() + ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90)) +
-  ggplot2::theme(plot.margin = ggplot2::unit(c(1, 1, 1, 1), "cm"))
+  ggplot2::theme(plot.margin = ggplot2::unit(c(1, 1, 1, 1), "cm")))
 
 
-N90_plot <-
+print( 
   ggplot2::ggplot(big_data, mapping = ggplot2::aes(x = assemblySize, y = N90)) + ggplot2::geom_point(size =
                                                                                                        3, colour = "#D55E00") +
   ggplot2::scale_x_continuous(labels = scales::unit_format(unit = "MB", scale = 1e-6),
                               breaks = scales::pretty_breaks(n = 10)) +
   ggplot2::scale_y_continuous(labels = scales::unit_format(unit = "MB", scale = 1e-6),
                               breaks = scales::pretty_breaks(n = 10)) +
-  ggplot2::ggtitle("Assembly Size vs N50 plot") +
+  ggplot2::ggtitle("Assembly Size vs N90 plot") +
   ggplot2::theme_bw() + ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90)) +
-  ggplot2::theme(plot.margin = ggplot2::unit(c(1, 1, 1, 1), "cm"))
+  ggplot2::theme(plot.margin = ggplot2::unit(c(1, 1, 1, 1), "cm")))
+
+
+#N50_plot
+#N90_plot
+dev.off()
 
 #Filtering blast results
 
 blastResults_df <-
   utils::read.table("blastResults.txt", sep = "\t", fill = TRUE)
-blastResults_df
+#blastResults_df
 blastResults_df <-
   blastResults_df[complete.cases(blastResults_df),]
 
@@ -280,7 +285,8 @@ KPCqlen <-
       grepl("KPC", sseqid)
   )[, "qlen", drop = FALSE]
 names(KPCqlen) <- c("KPCqlen")
-#KPCqlen
+KPCqlen
+class(KPCqlen)
 
 OXAqlen <-
   subset(
@@ -324,17 +330,13 @@ CPcontlen <- function(cl)
 
 #Passing the values to the function "CPcontlen" above
 
-N_Hist <- CPcontlen(NDMqlen$NDMqlen)
-names(N_Hist) <- c("ContigSize Range", "CPContig_Number")
-#N_Hist
-K_Hist <- CPcontlen(KPCqlen$KPCqlen)
-names(K_Hist) <- c("ContigSize Range", "CPContig_Number")
-#K_Hist
-O_Hist <- CPcontlen(OXAqlen$OXAqlen)
-names(O_Hist) <- c("ContigSize Range", "CPContig_Number")
-#O_Hist
+#Pass the values only if NDMqlen dataframe is not null. Because if df is null,it will throw error
 
-# Creating Histogram tables for NDM, KPC, OXA genes contig sizes
+if (nrow(NDMqlen) != 0) {
+N_Hist <- CPcontlen(NDMqlen$NDMqlen)
+names(N_Hist) <- c("ContigSize_Range", "CPContig_Number")
+#N_Hist
+# Creating Histogram tables for NDM genes contig sizes
 
 line = "\n\n========++++++++NDM Contig Size Distribution+++++++++++============\n"
 write(line, file = "CPContigSizeDist.txt", append = TRUE)
@@ -344,8 +346,35 @@ write.table(
   row.names = FALSE,
   quote = FALSE,
   append = TRUE
-)
+  )
 
+#Plotting the contig size distribution of NDM genes
+# pdf("NDM_Contig_Dist.pdf", width = 8, height = 10)
+# print(ggplot2::ggplot() + ggplot2::geom_histogram(ggplot2::aes(NDMqlen$NDMqlen), fill = 'orange', color =
+#                                                 'white') +  ggplot2::xlab("Contig Length") + ggplot2::ylab("Number of Contigs") +
+#   ggplot2::ggtitle("NDM Carbapenamase Contig Length Distribution") + ggplot2::theme_bw() +
+#   ggplot2:: theme(axis.text.x = ggplot2::element_text(angle = 90)) +  ggplot2::theme(plot.margin = ggplot2::unit(c(1, 1, 1, 1), "cm")) +
+#   ggplot2::scale_x_continuous(labels = scales::unit_format(unit = "KB", scale = 1e-3), breaks = scales::pretty_breaks(n = 15))
+# )
+# dev.off()
+
+tiff("NDM_Contig_Dist.tiff", width = 1500, height = 2000,units = 'px', res = 150)
+print(ggplot2::ggplot() + ggplot2::geom_histogram(ggplot2::aes(NDMqlen$NDMqlen), fill = 'orange', color =
+                                                    'white') +  ggplot2::xlab("Contig Length") + ggplot2::ylab("Number of Contigs") +
+        ggplot2::ggtitle("NDM Carbapenamase Contig Length Distribution") + ggplot2::theme_bw() +
+        ggplot2:: theme(axis.text.x = ggplot2::element_text(angle = 90)) +  ggplot2::theme(plot.margin = ggplot2::unit(c(1, 1, 1, 1), "cm")) +
+        ggplot2::scale_x_continuous(labels = scales::unit_format(unit = "KB", scale = 1e-3), breaks = scales::pretty_breaks(n = 15))
+)
+dev.off()
+
+}
+
+if (nrow(KPCqlen) != 0) {
+K_Hist <- CPcontlen(KPCqlen$KPCqlen)
+names(K_Hist) <- c("ContigSize_Range", "CPContig_Number")
+#K_Hist
+
+# Creating Histogram tables for KPC genes contig sizes
 line = "\n\n========++++++++KPC Contig Size Distribution+++++++++++============\n"
 write(line, file = "CPContigSizeDist.txt", append = TRUE)
 write.table(
@@ -356,6 +385,22 @@ write.table(
   append = TRUE
 )
 
+#Plotting the contig size distribution of KPC genes
+tiff("KPC_Contig_Dist.tiff", width = 1500, height = 2000,units = 'px', res = 150)
+print(ggplot2::ggplot() + ggplot2::geom_histogram(ggplot2::aes(KPCqlen$KPCqlen), fill = 'orange', color =
+                                                'white') +  ggplot2::xlab("Contig Length") + ggplot2::ylab("Number of Contigs") +
+  ggplot2::ggtitle("KPC Carbapenamase Contig Length Distribution") + ggplot2::theme_bw() +
+  ggplot2:: theme(axis.text.x = ggplot2::element_text(angle = 90)) +  ggplot2::theme(plot.margin = ggplot2::unit(c(1, 1, 1, 1), "cm")) +
+  ggplot2::scale_x_continuous(labels = scales::unit_format(unit = "KB", scale = 1e-3), breaks = scales::pretty_breaks(n = 15))
+)
+dev.off()
+}
+
+if (nrow(OXAqlen) != 0) {
+O_Hist <- CPcontlen(OXAqlen$OXAqlen)
+names(O_Hist) <- c("ContigSize_Range", "CPContig_Number")
+#O_Hist
+# Creating Histogram tables for OXA genes contig sizes
 line = "\n\n========++++++++OXA Contig Size Distribution+++++++++++============\n"
 write(line, file = "CPContigSizeDist.txt", append = TRUE)
 write.table(
@@ -366,33 +411,16 @@ write.table(
   append = TRUE
 )
 
-
-##OUTPUT4
-
-#PLotting the contig size distribution of NDM, KPC,OXA CPgenes
-
-N <-
-  ggplot2::ggplot() + ggplot2::geom_histogram(ggplot2::aes(NDMqlen$NDMqlen), fill = 'orange', color =
-                              'white') +  ggplot2::xlab("Contig Length") + ggplot2::ylab("Number of Contigs") +
-                  ggplot2::ggtitle("NDM Carbapenamase Contig Length Distribution") + ggplot2::theme_bw() +
-                ggplot2:: theme(axis.text.x = ggplot2::element_text(angle = 90)) +  ggplot2::theme(plot.margin = ggplot2::unit(c(1, 1, 1, 1), "cm")) +
-  ggplot2::scale_x_continuous(labels = scales::unit_format(unit = "KB", scale = 1e-3), breaks = scales::pretty_breaks(n = 15))
-
-K <-
-  ggplot2::ggplot() + ggplot2::geom_histogram(ggplot2::aes(KPCqlen$KPCqlen), fill = 'orange', color =
-                                                'white') +  ggplot2::xlab("Contig Length") + ggplot2::ylab("Number of Contigs") +
-  ggplot2::ggtitle("KPC Carbapenamase Contig Length Distribution") + ggplot2::theme_bw() +
-  ggplot2:: theme(axis.text.x = ggplot2::element_text(angle = 90)) +  ggplot2::theme(plot.margin = ggplot2::unit(c(1, 1, 1, 1), "cm")) +
-  ggplot2::scale_x_continuous(labels = scales::unit_format(unit = "KB", scale = 1e-3), breaks = scales::pretty_breaks(n = 15))
-
-O <-
-  ggplot2::ggplot() + ggplot2::geom_histogram(ggplot2::aes(OXAqlen$OXAqlen), fill = 'orange', color =
+#Plotting the contig size distribution of OXA genes
+tiff("OXA_Contig_Dist.tiff", width = 1500, height = 2000,units = 'px', res = 150) 
+print(ggplot2::ggplot() + ggplot2::geom_histogram(ggplot2::aes(OXAqlen$OXAqlen), fill = 'orange', color =
                                                 'white') +  ggplot2::xlab("Contig Length") + ggplot2::ylab("Number of Contigs") +
   ggplot2::ggtitle("OXA Carbapenamase Contig Length Distribution") + ggplot2::theme_bw() +
   ggplot2:: theme(axis.text.x = ggplot2::element_text(angle = 90)) +  ggplot2::theme(plot.margin = ggplot2::unit(c(1, 1, 1, 1), "cm")) +
   ggplot2::scale_x_continuous(labels = scales::unit_format(unit = "KB", scale = 1e-3), breaks = scales::pretty_breaks(n = 15))
-
-#O
+)
+dev.off()
+}
 
 #----CREATE A MATRIX
 blastResults_Matrix <-
@@ -407,7 +435,7 @@ dupAssemblies_logical <-
   duplicated(blastResults.filt[, c("assemblyName")], fromLast = TRUE)
 dupAssemblies <- blastResults.filt[dupAssemblies_logical, ]
 #length(unique(dupAssemblies$assemblyName)) ## This many assemblies have multiple genes or same genes in various places
-dupAssemblies
+#dupAssemblies
 
 ##SAMECP_SAMECONTIG - Done!
 '%>%' <- purrr::`%>%`
@@ -543,14 +571,28 @@ blastResults_MatrixLong <- reshape2::melt(blastResults_Matrix) ##long format
 
 # Heatmap of CPgene presence-absence matrix profile
 
-heatMap_ggplot <-
+heatMap_ggplot <- 
   ggplot2::ggplot(blastResults_MatrixLong, ggplot2::aes(sseqid, assemblyName)) +
   ggplot2::geom_tile(ggplot2::aes(fill = value), colour = "white") +
   ggplot2::scale_fill_gradient(low = "#F4B41A", high = "#143D59") +  ggplot2::theme(axis.text.y = ggplot2::element_blank()) +
   ggplot2::xlab("Carbapenamase Genes") + ggplot2::ylab("Assembly") +
   ggplot2::ggtitle("Carbapenamase Gene Profile Heatmap ")  ##https://www.tailorbrands.com/blog/logo-color-combinations
 
-heatMap_ggplot
+#heatMap_ggplot
+tiff("CPgeneProfile.tiff", width = 1500, height = 2000, units = 'px',res = 150)
+print(ggplot2::ggplot(blastResults_MatrixLong, ggplot2::aes(sseqid, assemblyName)) +
+  ggplot2::geom_tile(ggplot2::aes(fill = value), colour = "white") +
+  ggplot2::scale_fill_gradient(low = "#F4B41A", high = "#143D59") +  ggplot2::theme(axis.text.y = ggplot2::element_blank()) +
+  ggplot2::xlab("Carbapenamase Genes") + ggplot2::ylab("Assembly") +
+  ggplot2::ggtitle("Carbapenamase Gene Profile Heatmap ")  ##https://www.tailorbrands.com/blog/logo-color-combinations
+)
+dev.off()
+
+# # Save the CPgene Profile plots in tiff
+# tiff("CPgeneProfile.tiff", width = 1500, height = 2000, units = 'px',res = 150)
+# heatMap_ggplot
+# dev.off()
+
 
 ############--------3) FIND INTERSECTIONS OF CPGENES IN VARIOUS ASSEMBLIES USING UPSETR------##########
 write.csv(
@@ -563,7 +605,7 @@ write.csv(
 upsetdf <-
   utils::read.csv(file = "cp_presence-abence_matrix.csv", check.names = FALSE)
 
-upset_plot <-
+upset_plot <- 
   UpSetR::upset(
     upsetdf,
     order.by = "degree",
@@ -576,39 +618,23 @@ upset_plot <-
     sets.bar.color = "red",
     text.scale = c(1.2, 1.3, 1, 1, 1.2, 1.6)
   ) ##OUTPUT10
-#upset_plot
-##SAVE UPSETR PLOT INTO A PDF
 
-grDevices::tiff(
-  "filename.tiff",
-  width = 1500,
-  height = 2000,
-  units = 'px',
-  res = 150
-)
-heatMap_ggplot
-dev.off()
-
-# Save the plots in PDF
-grDevices::pdf("CPgene-profiler.pdf", width = 8, height = 10)
-
-N50_plot
-N90_plot
-N
-K
-O
-upset_plot
-heatMap_ggplot
-
+#tiff("upSetR.tiff", width = 1500, height = 2000, units = 'px',res = 150)
+pdf("upSetR.pdf", width = 8, height = 10)
+print(UpSetR::upset(upsetdf,order.by = "degree",nsets = 40, number.angles = 0,point.size = 1.5, line.size = 1,
+  mainbar.y.label = "Sample Count",
+  sets.x.label = "Carbapenamase Gene Set Size",
+  sets.bar.color = "red",
+  text.scale = c(1.2, 1.3, 1, 1, 1.2, 1.6))
+  )
 dev.off()
 
 ############--------CLEANING IF PREVIOUS OUTPUT FILE EXISTS------##########
-getwd()
+#getwd()
 files.to.move <- list.files(pattern = "txt|pdf|csv|png|jpg|tiff")
 dir.create("CPgene-profiler_Output")
-file.copy(files.to.move, "CPgene-profiler_Output")
-file.remove(files.to.move)
-
+base::invisible(file.copy(files.to.move, "CPgene-profiler_Output")) #invisible silently copies/removes files in R
+base::invisible(file.remove(files.to.move))
 
 # ELAPSED TIME
 new <- Sys.time() - old # calculate difference
