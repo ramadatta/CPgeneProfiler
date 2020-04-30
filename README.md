@@ -66,7 +66,6 @@ blastResults.txt | Blast Results of contigs against the CP genes
 Co-carriage_Report.txt | Information of Number of assemblies with the co-carriage broken down to category
 CPContigSizeDist.txt | Contig Size distribution
 CPgeneProfile.tiff | Carbapenamase Gene Profile in .tiff format
-CPgene-profiler.pdf | Plots of Assembly Stats, UpsetR Plots with co-carriage information in assemblies, Carbapenamase gene profile
 cp_presence-abence_matrix.csv | Presence-absence matrix of CP genes across assemblies
 N50_N90.pdf | N50, N90 vs Assembly Size plot
 NDM_Contig_Dist.tiff | NDM gene contig length distribution
