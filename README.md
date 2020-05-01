@@ -9,13 +9,21 @@ Generate a profile of carbapenamase genes from the genome assemblies
 
 ## Synopsis
 
-CPgene-profiler checks for a list of CarbaPenamase (CP) genes from a list of
- genome assemblies provided in fasta file format. It reports the profile of all
- the CP genes available in the genome assemblies in the format of simple heatmap.
- Apart from this, it also reports the presence of co-carriage of CP genes within
- an assembly. Other assembly statistics such as N50, N90, Assembly Size from the
+1) CPgeneProfiler package checks for a list of CarbaPenamase (CP) genes from a list of
+ genome assemblies provided in fasta file format. The CP genes are derived from ARG-annot
+ database.
+ 
+2) It reports the profile of all the CP genes available in the genome assemblies
+ in the format of simple heatmap.
+ 
+3) Apart from this, it also reports the presence of co-carriage of CP genes within
+ an assembly. 
+ 
+4) Other assembly statistics such as N50, N90, Assembly Size from the
  assembly are calculated and plots of length distribution of CP gene contigs from
- the list of assemblies are reported.
+ the list of assemblies are reported.  
+ 
+ Currently the package works only on Unix system.
 
 ![Example of graphics created using the CPgeneProfiler](CPgeneProfiler_Output.png)
 
@@ -97,3 +105,5 @@ version 0.2.0
 ## References
 
 Jake R Conway, Alexander Lex, Nils Gehlenborg, UpSetR: an R package for the visualization of intersecting sets and their properties, Bioinformatics, Volume 33, Issue 18, 15 September 2017, Pages 2938–2940, https://doi.org/10.1093/bioinformatics/btx364
+
+Gupta, Sushim Kumar, et al. "ARG-ANNOT, a new bioinformatic tool to discover antibiotic resistance genes in bacterial genomes." Antimicrobial agents and chemotherapy 58.1 (2014): 212-220.
