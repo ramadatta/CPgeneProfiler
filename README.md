@@ -28,7 +28,7 @@ Generate a profile of carbapenamase genes from the genome assemblies
 
   ## Quick Start
 
-### Step 1: Download CP gene database at first using R
+### Step 1: Download CP gene database using R
 ```
 # Specify CP gene database URL 
 > url <- "https://raw.githubusercontent.com/ramadatta/CPgene-profiler
