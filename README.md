@@ -10,41 +10,37 @@ Generate a profile of carbapenamase genes from the genome assemblies
 
 ## Synopsis
 
-1) CPgeneProfiler package checks for a list of CarbaPenamase (CP) genes from a list of
+1) **CPgeneProfiler** package checks for a list of CarbaPenamase (CP) genes from a list of
  genome assemblies provided in fasta file format. The CP genes are derived from ARG-annot
  database.
  
 2) It reports the profile of all the CP genes available in the genome assemblies
  in the format of simple heatmap.
  
-3) Apart from this, it also reports the presence of co-carriage of CP genes within
+3) Apart from this, it also reports the presence of cocarriage of CP genes within
  an assembly. 
  
 4) Other assembly statistics such as N50, N90, Assembly Size from the
  assembly are calculated and plots of length distribution of CP gene contigs from
  the list of assemblies are reported.  
  
- Currently the package works only on Unix system.
-
-![Example of graphics created using the CPgeneProfiler](CPgeneProfiler_Output.png)
+ Currently the package works only on Unix systems.
 
   ## Quick Start
 
 ### Step 1: Download CP gene database at first using R
 ```
-# Specify URL where file is stored
+# Specify CP gene database URL 
+> url <- "https://raw.githubusercontent.com/ramadatta/CPgene-profiler
+/master/ARG-annot_CPGene_DB.fasta"
 
-> url <- "https://raw.githubusercontent.com/ramadatta/CPgene-profiler/master/ARG-annot_CPGene_DB.fasta"
-
-# Specify destination where CPgene database file should be saved 
+# Specify destination where CP gene database file should be saved 
 > path <- "/home/user/Test" # Can change to prefarable location
-
-setwd(path)
+> setwd(path)
 > destfile <- "ARG-annot_CPGene_DB.fasta"
 
-# Apply download.file function to download the file
+# Download the CP gene database file to the folder set in "path"
 > download.file(url, destfile)
-
 ```
 ### Step 2: Run the package
 ```
@@ -66,7 +62,7 @@ setwd(path)
 	 
 - The following packages are supposed to be installed in Unix system
 
-    Command line NCBI blast+ (program assumes blastn and makeblastdb commands are in /usr/bin/)
+    Command line NCBI blast+ (program assumes blastn and makeblastdb commands are in path)
     
     Note: BLAST version 2.9.0+ was used for the present program although other BLAST+ similar to version 2.9.0+ parameters might also run without problems
     
@@ -81,7 +77,7 @@ Install devtools first, and then need to load them:
 
 Then install the CPgeneProfiler package using devtools. While installing, switching off to upgrade dependencies
 ```
-devtools::install_github("ramadatta/CPgeneProfiler",dependencies = FALSE)
+devtools::install_github("ramadatta/CPgeneProfiler")
 ```
 
 
@@ -98,11 +94,11 @@ Ensure you have installed the package properly:
 # Carbapenamase Gene Profiling
 
 ## Input Requirements
-* a folder with multiple FASTA files (can be in multiple contigs)
+* A folder with multiple FASTA files (can be in multiple contigs)
 
 ## Output Files
 
-* a folder "CPgene-profiler_Output" with the following files
+* A folder "CPgeneProfiler_Output" with the following files
 
 File | Description
 ----------|--------------
@@ -117,18 +113,22 @@ N50_N90.pdf | N50, N90 vs Assembly Size plot
 NDM_Contig_Dist.tiff | NDM gene contig length distribution
 KPC_Contig_Dist.tiff | KPC gene contig length distribution
 OXA_Contig_Dist.tiff | OXA gene contig length distribution
-upSetR.pdf | intersection plot of samples based on Carbapenamase genes
+upSetR.pdf | Set intersection plot of CP genes across all the input genome assemblies
 DiffCP_DiffContig.txt | Information of assemblies with different CP genes present in different contigs
 DiffCP_SameContig.txt | Information of assemblies with different CP genes present in same contigs 
 SameCP_DiffContig.txt | Information of assemblies with same CP genes present in different contigs
 SameCP_SameContig.txt | Information of assemblies with same CP genes present in same contigs
 
+## Figures
+<img src="https://user-images.githubusercontent.com/3212461/84586791-e28f2180-ae4c-11ea-9701-78f1983145ed.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586928-c93aa500-ae4d-11ea-8f24-ff11f20a5cfe.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586793-e622a880-ae4c-11ea-9037-0b245fb9d681.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586795-e7ec6c00-ae4c-11ea-9d52-3d55abac4f7f.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586923-c5a71e00-ae4d-11ea-9613-e8a3a7ddc921.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586925-c8097800-ae4d-11ea-9ecc-687aa00c70da.jpg" width="45%"></img> 
+
+Figures: 1) Carbapenamase Gene Profile (Top left) 2) Set intersection plot of CP genes across all the input genome assemblies (Top Right) 3-4) CP gene-containing contig length plots KPC (Middle left), OXA gene (Middle right) 5) N50 vs Assembly Size plot (Bottom left) 6) N90 vs Assembly Size plot (Bottom right)
+
 ## Citation
 Prakki Rama. (2020, June 14). ramadatta/CPgeneProfiler: CPgeneProfiler v2.1.0 release (Version v2.1.0). Zenodo. http://doi.org/10.5281/zenodo.3893391
-## Version history
+
+## Version 
 version 2.1.0
-version 2.0.0
-version 1.0.0
 
 ## References
 
