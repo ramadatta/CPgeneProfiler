@@ -124,11 +124,11 @@ SameCP_DiffContig.txt | Information of assemblies with same CP genes present in 
 SameCP_SameContig.txt | Information of assemblies with same CP genes present in same contigs
 
 ## Citation
-Prakki Rama, 2020. ramadatta/CPgeneProfiler: CPgeneProfiler second release. doi:10.5281/zenodo.3779546
-
+Prakki Rama. (2020, June 14). ramadatta/CPgeneProfiler: CPgeneProfiler v2.1.0 release (Version v2.1.0). Zenodo. http://doi.org/10.5281/zenodo.3893391
 ## Version history
-
-version 0.2.0
+version 2.1.0
+version 2.0.0
+version 1.0.0
 
 ## References
 
