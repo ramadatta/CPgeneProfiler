@@ -122,7 +122,7 @@ SameCP_SameContig.txt | Information of assemblies with same CP genes present in 
 ## Figures
 <img src="https://user-images.githubusercontent.com/3212461/84586791-e28f2180-ae4c-11ea-9701-78f1983145ed.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586928-c93aa500-ae4d-11ea-8f24-ff11f20a5cfe.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586793-e622a880-ae4c-11ea-9037-0b245fb9d681.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586795-e7ec6c00-ae4c-11ea-9d52-3d55abac4f7f.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586923-c5a71e00-ae4d-11ea-9613-e8a3a7ddc921.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586925-c8097800-ae4d-11ea-9ecc-687aa00c70da.jpg" width="45%"></img> 
 
-Figures: 1) Carbapenamase Gene Profile (Top left) 2) Set intersection plot of CP genes across all the input genome assemblies (Top Right) 3-4) CP gene-containing contig length plots KPC (Middle left), OXA gene (Middle right) 5) N50 vs Assembly Size plot (Bottom left) 6) N90 vs Assembly Size plot (Bottom right)
+Figures: 1) Carbapenamase Gene Profile (Top left) 2) Set intersection plot of CP genes across all the input genome assemblies (Top Right) 3-4) CP gene-containing contig length plots KPC (Middle left), OXA gene (Middle right) 5) Assembly Size vs N50 plot (Bottom left) 6) Assembly Size vs N90 plot (Bottom right)
 
 ## Citation
 Prakki Rama. (2020, June 14). ramadatta/CPgeneProfiler: CPgeneProfiler v2.1.0 release (Version v2.1.0). Zenodo. http://doi.org/10.5281/zenodo.3893391
