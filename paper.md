@@ -11,19 +11,19 @@ tags:
 authors:
   - name: Prakki Sai Rama Sridatta
     orcid: 0000-0002-9254-2557
-    affiliation: 1,2 
+    affiliation: "1,2" 
   - name: Natascha M Thevasagayam
-    affiliation: 1,2
+    affiliation: "1,2"
   - name: Weizhen Xu
-    affiliation: 1,2
+    affiliation: "1,2"
   - name: Kalisvar Marimuthu
-    affiliation: 1,2    
+    affiliation: "1,2"    
   - name: Jeanette W P Teo
     affiliation: 3   
   - name: Indumathi Venkatachalam 
     affiliation: 4
   - name: Ng Oon Tek
-    affiliation: 1,2,5                      
+    affiliation: "1,2,5"                      
 affiliations:
  - name: National Centre for Infectious Diseases, Singapore
    index: 1
