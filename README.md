@@ -31,7 +31,7 @@ Generate a profile of carbapenamase genes from the genome assemblies
 /master/ARG-annot_CPGene_DB.fasta"
 
 # Specify destination where CP gene database file should be saved 
-> path <- "/home/user/Test" # Can change to prefarable location
+> path <- "/home/user/db" # Can change to prefarable location
 > setwd(path)
 > destfile <- "ARG-annot_CPGene_DB.fasta"
 
@@ -40,7 +40,7 @@ Generate a profile of carbapenamase genes from the genome assemblies
 ```
 ### Step 2: Run the package
 ```
-% CPgeneProfiler("/path/Multiple_FastaFiles_Location/","/home/user/Test/")
+% CPgeneProfiler("/path/Multiple_FastaFiles_Location/","/home/user/db/")
 ```
 
 ## Prior to CPgeneProfiler installation
