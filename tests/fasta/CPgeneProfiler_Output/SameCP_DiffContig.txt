@@ -1,0 +1,3 @@
+assemblyName qseqid sseqid qlen qstart qend
+genome_006.fasta 3_length=75214_depth=2.77x_circular=true NDM-5 75214 36917 37729
+genome_006.fasta 5_length=70914_depth=2.31x NDM-5 70914 20489 21301
