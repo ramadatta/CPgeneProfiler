@@ -13,22 +13,16 @@ authors:
     orcid: 0000-0002-9254-2557
     affiliation: 1,2 
   - name: Natascha M Thevasagayam
-    orcid: 0000-0000-0000-0000
     affiliation: 1,2
   - name: Weizhen Xu
-    orcid: 0000-0000-0000-0000
     affiliation: 1,2
   - name: Kalisvar Marimuthu
-    orcid: 0000-0000-0000-0000
     affiliation: 1,2    
   - name: Jeanette W P Teo
-    orcid: 0000-0000-0000-0000
     affiliation: 3   
   - name: Indumathi Venkatachalam 
-    orcid: 0000-0000-0000-0000
     affiliation: 4
   - name: Ng Oon Tek
-    orcid: 0000-0000-0000-0000
     affiliation: 1,2,5                      
 affiliations:
  - name: National Centre for Infectious Diseases, Singapore
