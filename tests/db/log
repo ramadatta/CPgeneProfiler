@@ -1,9 +1,0 @@
-
-
-Building a new DB, current time: 06/16/2020 11:34:12
-New DB name:   /home/datta/Desktop/CPE/CPgeneProfiler/tests/db/ARG-annot_CPGene.DB
-New DB title:  ARG-annot_CPGene_DB.fasta
-Sequence type: Nucleotide
-Keep MBits: T
-Maximum file size: 1000000000B
-Adding sequences from FASTA; added 154 sequences in 0.0672739 seconds.

@@ -1,3 +1,0 @@
-assemblyName qseqid sseqid qlen qstart qend
-genome_003.fasta 2_length=316292_depth=2.71x_circular=true NDM-1 316292 149682 150494
-genome_003.fasta 2_length=316292_depth=2.71x_circular=true OXA-181 316292 49223 50020
