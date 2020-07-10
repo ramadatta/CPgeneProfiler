@@ -35,6 +35,7 @@ affiliations:
    index: 4      
  - name: Lee Kong Chian School of Medicine, Nanyang Technological University, Singapore
    index: 5       
+date: 10 July 2020   
 bibliography: paper.bib
 ---
 
