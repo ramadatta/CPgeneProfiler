@@ -35,13 +35,7 @@ affiliations:
    index: 4      
  - name: Lee Kong Chian School of Medicine, Nanyang Technological University, Singapore
    index: 5       
-citation_author: Prakki et. al.
-date: 13 June 2020
-year: 2020
 bibliography: paper.bib
-output: rticles::joss_article
-csl: apa.csl
-journal: JOSS
 ---
 
 # Summary
