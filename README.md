@@ -23,6 +23,8 @@ Generate a profile of carbapenamase genes from the genome assemblies
  Currently the package works only on Unix systems.
 
   ## Quick Start
+  
+  A detailed step-by-step guide for the installation of dependencies and `CPgeneProfiler` is available in this [wiki page](https://github.com/ramadatta/CPgeneProfiler/wiki/Step-by-Step-Guide). 
 
 ### Step 1: Download CP gene database using R
 ```
@@ -75,7 +77,6 @@ Then install the CPgeneProfiler package using devtools. While installing, switch
 ```
 devtools::install_github("ramadatta/CPgeneProfiler")
 ```
-
 
 ## Source
 ```
