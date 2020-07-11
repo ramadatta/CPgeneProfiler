@@ -1,42 +1,42 @@
 ---
-# Example from https://joss.readthedocs.io/en/latest/submitting.html
 title: 'CPgeneProfiler: A lightweight R package to profile the Carbapenamase genes
   from genome assemblies'
-tags:
-  - R
-  - Carbapenamase gene profile
-  - cocarriage
-  - Beta-lactamases
-  - Antimicrobial resistance (AMR)
 authors:
-  - name: Prakki Sai Rama Sridatta
-    orcid: 0000-0002-9254-2557
-    affiliation: "1,2" 
-  - name: Natascha M Thevasagayam
-    affiliation: "1,2"
-  - name: Weizhen Xu
-    affiliation: "1,2"
-  - name: Kalisvar Marimuthu
-    affiliation: "1,2"    
-  - name: Jeanette W P Teo
-    affiliation: 3   
-  - name: Indumathi Venkatachalam 
-    affiliation: 4
-  - name: Ng Oon Tek
-    affiliation: "1,2,5"                      
-affiliations:
- - name: National Centre for Infectious Diseases, Singapore
-   index: 1
- - name: Tan Tock Seng Hospital, Singapore
-   index: 2
- - name: National University Hospital, Singapore
-   index: 3
- - name: Singapore General Hospital, Singapore
-   index: 4      
- - name: Lee Kong Chian School of Medicine, Nanyang Technological University, Singapore
-   index: 5       
-date: 10 July 2020   
+- affiliation: '1,2'
+  name: Prakki Sai Rama Sridatta
+  orcid: 0000-0002-9254-2557
+- affiliation: '1,2'
+  name: Natascha M Thevasagayam
+- affiliation: '1,2'
+  name: Weizhen Xu
+- affiliation: '1,2'
+  name: Kalisvar Marimuthu
+- affiliation: 3
+  name: Jeanette W P Teo
+- affiliation: 4
+  name: Indumathi Venkatachalam
+- affiliation: '1,2,5'
+  name: Ng Oon Tek
+date: "10 July 2020"
+output: pdf_document
 bibliography: paper.bib
+tags:
+- R
+- Carbapenamase gene profile
+- cocarriage
+- Beta-lactamases
+- Antimicrobial resistance (AMR)
+affiliations:
+- index: 1
+  name: National Centre for Infectious Diseases, Singapore
+- index: 2
+  name: Tan Tock Seng Hospital, Singapore
+- index: 3
+  name: National University Hospital, Singapore
+- index: 4
+  name: Singapore General Hospital, Singapore
+- index: 5
+  name: Lee Kong Chian School of Medicine, Nanyang Technological University, Singapore
 ---
 
 # Summary
@@ -53,7 +53,7 @@ Current antimicrobial resistance gene finding tools can detect the genes from ei
 
 ![a) CP gene profile (Top left) b) Set intersection plot showing the number of genome assemblies for various CP genes (Top right) c) CP gene-containing contig length plots KPC (Bottom left) & OXA genes (Bottom right)](image.jpg)
 
-In addition to profiling the CP genes and finding co-carriage of CP genes in genome assemblies (Figure 1a), the tool also generates plots which visualizes set intersections of CP genes across all the input genome assemblies (Figure 1b). Lastly, ``CPgeneProfiler`` also generates simple N50 & N90 statistic plots and CP gene-containing contig length distributions summary plots (Figure 1c, 1d). Currently, ``CPgeneProfiler`` can be executed under the Linux/Unix operating system.
+In addition to profiling the CP genes and finding co-carriage of CP genes in genome assemblies (Figure 1a), the tool also generates plots which visualizes set intersections of CP genes across all the input genome assemblies [@conway2017upsetr] (Figure 1b). Lastly, ``CPgeneProfiler`` also generates simple N50 & N90 statistic plots and CP gene-containing contig length distributions summary plots (Figure 1c, 1d) using ggplot2 package [@ggplot]. Currently, ``CPgeneProfiler`` can be executed under the Linux/Unix operating system.
 
 # CPgeneProfiler R Package
 
