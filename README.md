@@ -7,7 +7,7 @@ Generate a profile of carbapenamase genes from the genome assemblies
 ## Synopsis
 
 1) **CPgeneProfiler** package checks for a list of CarbaPenamase (CP) genes from a list of
- genome assemblies provided in fasta file format. The CP genes are derived from ARG-annot
+ genome assemblies provided in FASTA file format. The CP genes are derived from ARG-ANNOT
  database.
  
 2) It reports the profile of all the CP genes available in the genome assemblies
@@ -30,18 +30,19 @@ Generate a profile of carbapenamase genes from the genome assemblies
 ```
 # Specify CP gene database URL 
 > url <- "https://raw.githubusercontent.com/ramadatta/CPgene-profiler
-/master/ARG-annot_CPGene_DB.fasta"
+/master/ARG-ANNOT_CPGene_DB.fasta"
 
 # Specify destination where CP gene database file should be saved 
 > path <- "/home/user/db" # Can change to prefarable location
 > setwd(path)
-> destfile <- "ARG-annot_CPGene_DB.fasta"
+> destfile <- "ARG-ANNOT_CPGene_DB.fasta"
 
 # Download the CP gene database file to the folder set in "path"
 > download.file(url, destfile)
 ```
 ### Step 2: Run the package
 ```
+# Arguments: folder containing your reads, folder containing the CP gene database
 % CPgeneProfiler("/path/Multiple_FastaFiles_Location/","/home/user/db/")
 ```
 
@@ -105,7 +106,7 @@ blastResults.txt | Blast Results of contigs against the CP genes
 Co-carriage_Report.txt | Information of Number of assemblies with the co-carriage broken down to category
 CPContigSizeDist.txt | Contig Size distribution
 CPgeneProfile.tiff | Carbapenamase Gene Profile in .tiff format
-cp_presence-abence_matrix.csv | Presence-absence matrix of CP genes across assemblies
+cp_presence-absence_matrix.csv | Presence-absence matrix of CP genes across assemblies
 N50_N90.pdf | N50, N90 vs Assembly Size plot
 NDM_Contig_Dist.tiff | NDM gene contig length distribution
 KPC_Contig_Dist.tiff | KPC gene contig length distribution
@@ -130,4 +131,4 @@ Jake R Conway, Alexander Lex, Nils Gehlenborg, UpSetR: an R package for the visu
 
 Gupta, Sushim Kumar, et al. "ARG-ANNOT, a new bioinformatic tool to discover antibiotic resistance genes in bacterial genomes." Antimicrobial agents and chemotherapy 58.1 (2014): 212-220.
 
-Functional overlap of the Arabidopsis leaf and root microbiota. Bai Y, Müller DB, Srinivas G, Garrido-Oter R, Potthoff E, Rott M, Dombrowski N, Münch PC, Spaepen S, Remus-Emsermann M, Hüttel B, McHardy AC, Vorholt JA, Schulze-Lefert P. Nature. 2015 Dec 2. doi: 10.1038/nature16192.
+Functional overlap of the Arabidopsis leaf and root microbiota. Bai Y, Müller DB, Srinivas G, Garrido-Oter R, Potthoff E, Rott M, Dombrowski N, Münch PC, Spaepen S, Remus-Emsermann M, Hüttel B, McHardy AC, Vorholt JA, Schulze-Lefert P. Nature. 2016 Dec 2. doi: 10.1038/nature16192.
