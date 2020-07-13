@@ -50,7 +50,6 @@ download.file(url, destfile)
 
 - The following packages are supposed to be installed in R:
 
-  dplyr,
 	 tidyverse,
 	 UpSetR,
 	 scales,
@@ -60,7 +59,7 @@ download.file(url, destfile)
 	 gridExtra
 
 ```
-install.packages(c("dplyr", "tidyverse", "UpSetR", "scales", "ape", 
+install.packages(c("tidyverse", "UpSetR", "scales", "ape", 
                     "Biostrings", "reshape2", "gridExtra"))
 ```
 
