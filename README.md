@@ -29,16 +29,16 @@ Generate a profile of carbapenamase genes from the genome assemblies
 ### Step 1: Download CP gene database using R
 ```
 # Specify CP gene database URL 
-> url <- "https://raw.githubusercontent.com/ramadatta/CPgene-profiler
+url <- "https://raw.githubusercontent.com/ramadatta/CPgene-profiler
 /master/ARG-ANNOT_CPGene_DB.fasta"
 
 # Specify destination where CP gene database file should be saved 
-> path <- "/home/user/db" # Can change to prefarable location
-> setwd(path)
-> destfile <- "ARG-ANNOT_CPGene_DB.fasta"
+path <- "/home/user/db" # Can change to prefarable location
+setwd(path)
+destfile <- "ARG-ANNOT_CPGene_DB.fasta"
 
 # Download the CP gene database file to the folder set in "path"
-> download.file(url, destfile)
+download.file(url, destfile)
 ```
 ### Step 2: Run the package
 ```
@@ -72,8 +72,8 @@ Generate a profile of carbapenamase genes from the genome assemblies
 
 Install devtools first, and then need to load them:
 ```
-> install.packages("devtools")
-> library(devtools)
+install.packages("devtools")
+library(devtools)
 ```
 
 Then install the CPgeneProfiler package using devtools. While installing, switching off to upgrade dependencies
