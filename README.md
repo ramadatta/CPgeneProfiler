@@ -59,14 +59,17 @@ download.file(url, destfile)
 	 reshape2,
 	 gridExtra
 
-            
+```
+install.packages(c("dplyr", "tidyverse", "UpSetR", "scales", "ape", 
+                    "Biostrings", "reshape2", "gridExtra"))
+```
+
 	 
-- The following packages are supposed to be installed in Unix system
+- [NCBI BLAST+](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download) must be installed:
 
     Command line NCBI blast+ (program assumes blastn and makeblastdb commands are in path)
     
     Note: BLAST version 2.9.0+ was used for the present program although other BLAST+ similar to version 2.9.0+ parameters might also run without problems
-    
 
 ## CPgeneProfiler Installation
 
