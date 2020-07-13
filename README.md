@@ -58,6 +58,8 @@ Generate a profile of carbapenamase genes from the genome assemblies
 	 Biostrings,
 	 reshape2,
 	 gridExtra
+
+            
 	 
 - The following packages are supposed to be installed in Unix system
 
@@ -70,7 +72,7 @@ Generate a profile of carbapenamase genes from the genome assemblies
 
 Install devtools first, and then need to load them:
 ```
-> install.packages(devtools)
+> install.packages("devtools")
 > library(devtools)
 ```
 
@@ -87,6 +89,7 @@ https://github.com/ramadatta/CPgeneProfiler
 # Check installation
 Ensure you have installed the package properly:
 ```
+library(CPgeneProfiler)
 ?CPgeneProfiler
 ```
 # Carbapenamase Gene Profiling
