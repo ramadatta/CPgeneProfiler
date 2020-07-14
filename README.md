@@ -48,19 +48,22 @@ download.file(url, destfile)
 
 ## Prior to CPgeneProfiler installation
 
-- The following packages are supposed to be installed in R:
+- The following packages are supposed to be installed in R (>=3.5):
 
 	 tidyverse,
 	 UpSetR,
 	 scales,
 	 ape,
+     BiocManager,
 	 Biostrings,
 	 reshape2,
 	 gridExtra
 
 ```
-install.packages(c("tidyverse", "UpSetR", "scales", "ape", 
-                    "Biostrings", "reshape2", "gridExtra"))
+install.packages(c("BiocManager", "tidyverse", "UpSetR", "scales", "ape", 
+                    "reshape2", "gridExtra"))
+BiocManager::install("Biostrings")
+
 ```
 
 	 
