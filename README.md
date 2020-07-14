@@ -139,4 +139,4 @@ Jake R Conway, Alexander Lex, Nils Gehlenborg, UpSetR: an R package for the visu
 
 Gupta, Sushim Kumar, et al. "ARG-ANNOT, a new bioinformatic tool to discover antibiotic resistance genes in bacterial genomes." Antimicrobial agents and chemotherapy 58.1 (2014): 212-220.
 
-Functional overlap of the Arabidopsis leaf and root microbiota. Bai Y, Müller DB, Srinivas G, Garrido-Oter R, Potthoff E, Rott M, Dombrowski N, Münch PC, Spaepen S, Remus-Emsermann M, Hüttel B, McHardy AC, Vorholt JA, Schulze-Lefert P. Nature. 2016 Dec 2. doi: 10.1038/nature16192.
+Bai Y, Müller DB, Srinivas G, Garrido-Oter R, Potthoff E, Rott M, Dombrowski N, Münch PC, Spaepen S, Remus-Emsermann M, Hüttel B, McHardy AC, Vorholt JA, Schulze-Lefert P. Functional overlap of the Arabidopsis leaf and root microbiota. Nature. 2015 Dec 2. doi: 10.1038/nature16192.
