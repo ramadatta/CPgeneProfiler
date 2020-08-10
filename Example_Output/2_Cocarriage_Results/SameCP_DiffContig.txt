@@ -1,3 +1,0 @@
-assemblyName qseqid sseqid qlen slen qstart qend length pident cov
-genome_001.fasta 4_length=71861_depth=1.95x_circular=true KPC-2 71861 918 3810 4727 918 100 100
-genome_001.fasta 5_length=71851_depth=1.95x_circular=true KPC-2 71851 918 3810 4727 918 100 100
