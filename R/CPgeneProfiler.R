@@ -1,6 +1,7 @@
 #' Generate a profile of carbapenamase genes from the genome assemblies
 #'
 <<<<<<< HEAD
+<<<<<<< HEAD
 #' `CPgeneProfiler` checks for a list of CarbaPenamase (CP) genes from a list of
 #' input genome assemblies provided in fasta file format. It reports the profile of all
 #' the CP genes available in the genome assemblies in the format of simple heatmap.
@@ -18,6 +19,8 @@ NULL
 
 
 =======
+=======
+>>>>>>> 8b4803c980595a95edd1ca1e46a9633c509f109b
 #' CPgene-profiler checks for a list of CarbaPenamase (CP) genes from a list of
 #' genome assemblies provided in fasta file format. It reports the profile of all
 #' the CP genes available in the genome assemblies in the format of simple heatmap.
@@ -756,4 +759,7 @@ CPgeneProfiler <- function(fastafiles_location,db_location){
   print(new) # print in nice format
   # ELAPSED TIME
 }
+<<<<<<< HEAD
+>>>>>>> 8b4803c980595a95edd1ca1e46a9633c509f109b
+=======
 >>>>>>> 8b4803c980595a95edd1ca1e46a9633c509f109b
