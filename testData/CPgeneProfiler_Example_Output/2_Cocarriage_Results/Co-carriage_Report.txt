@@ -1,0 +1,4 @@
+Assemblies with SameCP_SameContig_Count are :  4
+Assemblies with SameCP_DiffContig_Count are :  1
+Assemblies with DiffCP_DiffContig_Count are :  1
+Assemblies with DiffCP_SameContig_Count are :  2

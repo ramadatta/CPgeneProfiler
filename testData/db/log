@@ -1,5 +1,14 @@
 
 
+<<<<<<< HEAD
+Building a new DB, current time: 08/10/2020 13:16:14
+New DB name:   /home/datta/Desktop/CPE/ReCPgeneProfiler/JOSS_Submission_PostReview/modular_test5_final_upload_forTesting/CPgeneProfiler/testData/db/NCBI_BARRGD_CPG.DB
+New DB title:  NCBI_BARRGD_CPG_DB.fasta
+Sequence type: Nucleotide
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 1062 sequences in 0.038542 seconds.
+=======
 Building a new DB, current time: 06/16/2020 11:34:12
 New DB name:   /home/datta/Desktop/CPE/CPgeneProfiler/tests/db/ARG-annot_CPGene.DB
 New DB title:  ARG-annot_CPGene_DB.fasta
@@ -7,3 +16,4 @@ Sequence type: Nucleotide
 Keep MBits: T
 Maximum file size: 1000000000B
 Adding sequences from FASTA; added 154 sequences in 0.0672739 seconds.
+>>>>>>> 8b4803c980595a95edd1ca1e46a9633c509f109b
