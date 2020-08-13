@@ -48,14 +48,15 @@ Generate a profile of carbapenamase genes from the genome assemblies
 
 The R package is available through github repository can be installed using devtools.
 
-```
+``` r 
 install.packages("devtools")
 devtools::install_github("ramadatta/CPgeneProfiler")
 ```
 
 ##### **Check installation**
 Ensure you have installed the package properly:
-```
+
+``` r
 ?CPgeneProfiler
 ```
 
@@ -93,7 +94,7 @@ else simply [Click](https://downgit.github.io/#/home?url=https://github.com/rama
 
 As a first step, CPgeneProfiler generates NCBI BLAST Results by aligning input genome assemblies against Carbapenamase (CP) gene database. Now that you already have a directory with fasta files (should have extensions `.fasta` or `.fa`) in `fasta` folder and cp gene database sequence in `db` folder, you can specify the path of both directories as an input and run the package with `cpblast()` command.
 
-```
+``` r
 cpblast(fastalocation = "/home/user/CPgeneProfiler/testData/fasta",dblocation = "/home/user/CPgeneProfiler/testData/db",num_threads = 4,evalue = "1e-3")
 ```
 The users can adjust BLAST parameters `num_threads` and `evalue` accordingly. If not adjusted, the package runs with default parameters (`num_threads` = 8, `evalue` = "1e-6")
@@ -105,7 +106,7 @@ The users can adjust BLAST parameters `num_threads` and `evalue` accordingly. If
 
 If the users find the default cutoff stringent to pick up the genes in the assemblies, then the parameters can be adjusted to desired parameters. 
 
-```
+``` r
 filt_blast(cpgcov = 100,cpgpident = 100)
 ```
 
@@ -113,7 +114,7 @@ filt_blast(cpgcov = 100,cpgpident = 100)
 
 `cocarriage()` commands finds if two or more CP genes exists in same contig or multiple contigs across all the input genome assemblies. This function can be used only after running `filt_blast()`. By default parameters, CP Gene Coverage and Percentage Identity are set to 100% (cpgcov=100, cpgpident=100) and can be adjusted.
 
-```
+``` r
 cocarriage(cpgcov = 100, cpgpident = 100)
 ```
 
@@ -121,7 +122,7 @@ cocarriage(cpgcov = 100, cpgpident = 100)
 
 `cpprofile()` creates a heatmap of carbapenamase gene profile from the input genome assemblies. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors of the heatmap.
 
-```
+``` r
 cpprofile(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbapenamase Genes", ylab="Assembly", title="Carbapenamase Gene Profile Heatmap", titlesize=15, labelsize=12,colorcode_low = "#143D59", colorcode_high = "#F4B41A", cpgcov=100, cpgpident=100)
 ```
 
@@ -129,28 +130,28 @@ cpprofile(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbap
 
 `plot_conlen()` generates length distribution for all the CP gene contigs present across all the input genome assemblies. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors.
 
-```
+``` r
 plot_conlen(outputType="tiff", width = 700, height = 700, res = 150, xlab="Contig Length", ylab="Number of Contigs", title=" Contig Length Distribution",element_text_angle=90,unit="KB", breaks=15, colorfill = "#F99245",cpgcov=100, cpgpident=100)
 ```
 ##### **Step 3f: Generate assembly statistics using `assemblystat()` command**
 
 `assemblystat()` generates basic assembly stats which includes N50 size, N90 size and Genome assembly size. This function also generates Assembly Size vs N50 plot and Assembly Size vs N50 plot. This function requires the location of fasta file directory. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors.
 
-```
+``` r
 assemblystat("/home/user/CPgeneProfiler/testData/fasta", outputType="png", width = 700, height = 700, res = 150, geom_point_size=3, n50colorfill = "#0072B2", n90colorfill = "#D55E00")
 ```
 ##### **Step 3g: Generate Set Intersection of CP genes using `upsetR_plot()` command**
 
 `upsetR_plot()` generates set intersection plot of CP genes across all the input genome assemblies. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors.
 
-```
+``` r
 upsetR_plot(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbapenamase Gene Set Size", ylab="Number of genome assemblies",cpgcov=100, cpgpident=100, order.by = "degree",nsets = 40, number.angles = 0,point.size = 1.5, line.size = 1,sets.bar.color = "red")
 ```
 ##### **Step 3h: Summarize all the results using `cp_summarize()` command**
 
 `cp_summarize()` arranges all the output files generated from above commands into respective folders. This also creates a summary of all the plots from CPgeneProfiler output into a single PDF file. Users can specify the output directory name and summary pdf name. To summarize, this commands reqiures all the output image plots to have same format i.e, either png/tiff/jpeg.
 
-```
+``` r
 cp_summarize(outdir = "CPgeneProfiler_Output", report="Summary" , image = "png")
 ```
 
@@ -158,7 +159,7 @@ cp_summarize(outdir = "CPgeneProfiler_Output", report="Summary" , image = "png")
 
 `db_summary()` command displays the details of Database, which includes Database Name, Database Version, Total sequences in Databases, Date on which database was created, Database Reference location from where sequences are downloaded.
 
-```
+``` r
 db_summary()
 ```
 
