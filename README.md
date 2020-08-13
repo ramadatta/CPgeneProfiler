@@ -1,10 +1,15 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 # CPgeneProfiler
 Generate a profile of carbapenamase genes from the genome assemblies
 
 ## Author
 [Prakki Sai Rama Sridatta](https://twitter.com/prakki_rama)
 
-## Synopsis
+##### **Synopsis**
 
 1) **CPgeneProfiler** package checks for a list of CarbaPenamase (CP) genes from a list of
  genome assemblies provided in fasta file format. The CP genes are derived from ARG-annot
@@ -21,35 +26,10 @@ Generate a profile of carbapenamase genes from the genome assemblies
  the list of assemblies are reported.  
  
  Currently the package works only on Unix systems.
-
-  ## Quick Start
-  
-  A detailed step-by-step guide for the installation of dependencies and `CPgeneProfiler` is available in this [wiki page](https://github.com/ramadatta/CPgeneProfiler/wiki/Step-by-Step-Guide). 
-
-### Step 1: Download CP gene database using R
-```
-# Specify CP gene database URL 
-> url <- "https://raw.githubusercontent.com/ramadatta/CPgene-profiler
-/master/ARG-annot_CPGene_DB.fasta"
-
-# Specify destination where CP gene database file should be saved 
-> path <- "/home/user/db" # Can change to prefarable location
-> setwd(path)
-> destfile <- "ARG-annot_CPGene_DB.fasta"
-
-# Download the CP gene database file to the folder set in "path"
-> download.file(url, destfile)
-```
-### Step 2: Run the package
-```
-% CPgeneProfiler("/path/Multiple_FastaFiles_Location/","/home/user/db/")
-```
-
-## Prior to CPgeneProfiler installation
+ 
+##### **Prior to CPgeneProfiler installation**
 
 - The following packages are supposed to be installed in R:
-
-  dplyr,
 	 tidyverse,
 	 UpSetR,
 	 scales,
@@ -64,70 +44,150 @@ Generate a profile of carbapenamase genes from the genome assemblies
     
     Note: BLAST version 2.9.0+ was used for the present program although other BLAST+ similar to version 2.9.0+ parameters might also run without problems
     
+##### **Installation**
 
-## CPgeneProfiler Installation
+The R package is available through github repository can be installed using devtools.
 
-Install devtools first, and then need to load them:
 ```
-> install.packages(devtools)
-> library(devtools)
-```
-
-Then install the CPgeneProfiler package using devtools. While installing, switching off to upgrade dependencies
-```
+install.packages("devtools")
 devtools::install_github("ramadatta/CPgeneProfiler")
 ```
 
-## Source
-```
-https://github.com/ramadatta/CPgeneProfiler
-```
-
-# Check installation
+##### **Check installation**
 Ensure you have installed the package properly:
 ```
 ?CPgeneProfiler
 ```
-# Carbapenamase Gene Profiling
 
-## Input Requirements
-* A folder with multiple FASTA files (can be in multiple contigs)
+##### **Input Requirements**
+* Path of a directory with multiple FASTA files (can be in multiple contigs) 
+* Path of Carbapenamase Gene Database directory
 
-## Output Files
+### **Usage**
 
-* A folder "CPgeneProfiler_Output" with the following files
+##### **Step 1: Download CP gene database**
+
+Go to the UNIX/Linux command line terminal and download the `db` folder with SVN
+
+```
+svn export https://github.com/ramadatta/CPgeneProfiler/trunk/testData/db
+```
+else simply [Click](https://downgit.github.io/#/home?url=https://github.com/ramadatta/CPgeneProfiler/tree/master/testData/db) to save database folder and uncompress the `db.zip` folder.
+
+##### **Step 2: Download test input data**
+
+To test the package with test input data, Go to the UNIX/Linux command line terminal and download the `fasta` folder with SVN
+
+```
+svn export https://github.com/ramadatta/CPgeneProfiler/trunk/testData/fasta
+```
+else simply [Click](https://downgit.github.io/#/home?url=https://github.com/ramadatta/CPgeneProfiler/tree/master/testData/fasta) to save fasta folder and uncompress the `fasta.zip` folder.
+
+##### **Step 3: Run the package**
+
+`CPgeneProfiler` package can be run using the following functions: `cpblast()`, `filt_blast()`, `cocarriage()`, `cpprofile()`, `upsetR_plot()`, `plot_conlen()`,`assemblystat()`, `cp_summarize()`, `db_summary()`
+
+
+##### **Step 3a: A simple NCBI BLAST using `cpblast()` command**
+
+
+As a first step, CPgeneProfiler generates NCBI BLAST Results by aligning input genome assemblies against Carbapenamase (CP) gene database. Now that you already have a directory with fasta files (should have extensions `.fasta` or `.fa`) in `fasta` folder and cp gene database sequence in `db` folder, you can specify the path of both directories as an input and run the package with `cpblast()` command.
+
+```
+cpblast(fastalocation = "/home/user/CPgeneProfiler/testData/fasta",dblocation = "/home/user/CPgeneProfiler/testData/db",num_threads = 4,evalue = "1e-3")
+```
+The users can adjust BLAST parameters `num_threads` and `evalue` accordingly. If not adjusted, the package runs with default parameters (`num_threads` = 8, `evalue` = "1e-6")
+
+
+##### **Step 3b: Filtering BLAST results using `filt_blast()` command**
+
+`filt_blast()` then filters the output BLAST results obtained from `cpblast()` command. The BLAST hits are filtered based on CP gene coverage and Percentage Identity. By default parameters, CP Gene Coverage and Percentage Identity are set to 100% (cpgcov=100, cpgpident=100). This means that a CP gene should have 100% alignment length and 100% identity, without even a single mismatch. 
+
+If the users find the default cutoff stringent to pick up the genes in the assemblies, then the parameters can be adjusted to desired parameters. 
+
+```
+filt_blast(cpgcov = 100,cpgpident = 100)
+```
+
+##### **Step 3c: Finding cocarriage genes using `cocarriage()` command**
+
+`cocarriage()` commands finds if two or more CP genes exists in same contig or multiple contigs across all the input genome assemblies. This function can be used only after running `filt_blast()`. By default parameters, CP Gene Coverage and Percentage Identity are set to 100% (cpgcov=100, cpgpident=100) and can be adjusted.
+
+```
+cocarriage(cpgcov = 100, cpgpident = 100)
+```
+
+##### **Step 3d: Finding CP gene profile using `cpprofile()` command**
+
+`cpprofile()` creates a heatmap of carbapenamase gene profile from the input genome assemblies. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors of the heatmap.
+
+```
+cpprofile(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbapenamase Genes", ylab="Assembly", title="Carbapenamase Gene Profile Heatmap", titlesize=15, labelsize=12,colorcode_low = "#143D59", colorcode_high = "#F4B41A", cpgcov=100, cpgpident=100)
+```
+
+##### **Step 3e: Plot CP gene contig length distribution using `plot_conlen()` command**
+
+`plot_conlen()` generates length distribution for all the CP gene contigs present across all the input genome assemblies. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors.
+
+```
+plot_conlen(outputType="tiff", width = 700, height = 700, res = 150, xlab="Contig Length", ylab="Number of Contigs", title=" Contig Length Distribution",element_text_angle=90,unit="KB", breaks=15, colorfill = "#F99245",cpgcov=100, cpgpident=100)
+```
+##### **Step 3f: Generate assembly statistics using `assemblystat()` command**
+
+`assemblystat()` generates basic assembly stats which includes N50 size, N90 size and Genome assembly size. This function also generates Assembly Size vs N50 plot and Assembly Size vs N50 plot. This function requires the location of fasta file directory. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors.
+
+```
+assemblystat("/home/user/CPgeneProfiler/testData/fasta", outputType="png", width = 700, height = 700, res = 150, geom_point_size=3, n50colorfill = "#0072B2", n90colorfill = "#D55E00")
+```
+##### **Step 3g: Generate Set Intersection of CP genes using `upsetR_plot()` command**
+
+`upsetR_plot()` generates set intersection plot of CP genes across all the input genome assemblies. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors.
+
+```
+upsetR_plot(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbapenamase Gene Set Size", ylab="Number of genome assemblies",cpgcov=100, cpgpident=100, order.by = "degree",nsets = 40, number.angles = 0,point.size = 1.5, line.size = 1,sets.bar.color = "red")
+```
+##### **Step 3h: Summarize all the results using `cp_summarize()` command**
+
+`cp_summarize()` arranges all the output files generated from above commands into respective folders. This also creates a summary of all the plots from CPgeneProfiler output into a single PDF file. Users can specify the output directory name and summary pdf name. To summarize, this commands reqiures all the output image plots to have same format i.e, either png/tiff/jpeg.
+
+```
+cp_summarize(outdir = "CPgeneProfiler_Output", report="Summary" , image = "png")
+```
+
+##### **Step 3i: Find Database summary details using `db_summary()` command**
+
+`db_summary()` command displays the details of Database, which includes Database Name, Database Version, Total sequences in Databases, Date on which database was created, Database Reference location from where sequences are downloaded.
+
+```
+db_summary()
+```
+
+##### **Output Files**
+
+* A folder "CPgeneProfiler_Output" with the following files in respective directories
 
 File | Description
 ----------|--------------
 assemblyStats.txt | A simple text file with N50, N90, Assembly Size for each assembly
-blastResults.filt.txt | Filtered blast results with contains contigs matching CPgenes with 100% identity and 100% coverage
+blastResults.filt.txt | Filtered blast results with contains contigs matching CPgenes (default: 100% identity and 100% coverage)
 blastResults.txt | Blast Results of contigs against the CP genes
 Co-carriage_Report.txt | Information of Number of assemblies with the co-carriage broken down to category
 CPContigSizeDist.txt | Contig Size distribution
-CPgeneProfile.tiff | Carbapenamase Gene Profile in .tiff format
-cp_presence-abence_matrix.csv | Presence-absence matrix of CP genes across assemblies
+CPgeneProfile.png | Carbapenamase Gene Profile (default:png)
+cp_presence-absence_matrix.csv | Presence-absence matrix of CP genes across assemblies
 N50_N90.pdf | N50, N90 vs Assembly Size plot
-NDM_Contig_Dist.tiff | NDM gene contig length distribution
-KPC_Contig_Dist.tiff | KPC gene contig length distribution
-OXA_Contig_Dist.tiff | OXA gene contig length distribution
-upSetR.pdf | Set intersection plot of CP genes across all the input genome assemblies
+"CPGene"_Contig_Dist.png | CP gene contig length distribution (for each CP gene a seperate disribution plot is generated. Default image format: png)
+upset_plot.pdf | Set intersection plot of CP genes across all the input genome assemblies
 DiffCP_DiffContig.txt | Information of assemblies with different CP genes present in different contigs
 DiffCP_SameContig.txt | Information of assemblies with different CP genes present in same contigs 
 SameCP_DiffContig.txt | Information of assemblies with same CP genes present in different contigs
 SameCP_SameContig.txt | Information of assemblies with same CP genes present in same contigs
+SummaryPlots.pdf | All the plots in a single pdf file
 
-## Figures
-<img src="https://user-images.githubusercontent.com/3212461/84586791-e28f2180-ae4c-11ea-9701-78f1983145ed.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586928-c93aa500-ae4d-11ea-8f24-ff11f20a5cfe.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586793-e622a880-ae4c-11ea-9037-0b245fb9d681.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586795-e7ec6c00-ae4c-11ea-9d52-3d55abac4f7f.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586923-c5a71e00-ae4d-11ea-9613-e8a3a7ddc921.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/84586925-c8097800-ae4d-11ea-9ecc-687aa00c70da.jpg" width="45%"></img> 
+## A few example plots created with `CPgeneProfiler`
+<img src="https://user-images.githubusercontent.com/3212461/90124520-1c1fd280-dd93-11ea-9ce3-f55ccf583b45.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124524-1cb86900-dd93-11ea-8960-53fa7a19aac9.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124487-10cca700-dd93-11ea-9572-dfc44a190dd6.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124536-1f1ac300-dd93-11ea-9acc-9435b79a7f1c.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124507-17f3b500-dd93-11ea-9f37-6167ec79b8a1.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124510-188c4b80-dd93-11ea-8609-1d3fbfc3ef43.png" width="45%"></img> 
 
-Figures: 1) Carbapenamase Gene Profile (Top left) 2) Set intersection plot of CP genes across all the input genome assemblies (Top Right) 3-4) CP gene-containing contig length plots KPC (Middle left), OXA gene (Middle right) 5) Assembly Size vs N50 plot (Bottom left) 6) Assembly Size vs N90 plot (Bottom right)
+Figures: 1) Assembly Size vs N50 plot (Top left) 2) Assembly Size vs N90 plot (Top Right) 3) Carbapenamase Gene Profile CP gene-containing contig length plots KPC (Middle left) 4) Set intersection plot of CP genes across all the input genome assemblies (Middle right) 5-7) (Bottom left) 6)  (Bottom right)
 
-## Version 
+##### **Version**
 version 2.1.0
-
-## References
-
-Jake R Conway, Alexander Lex, Nils Gehlenborg, UpSetR: an R package for the visualization of intersecting sets and their properties, Bioinformatics, Volume 33, Issue 18, 15 September 2017, Pages 2938–2940, https://doi.org/10.1093/bioinformatics/btx364
-
-Gupta, Sushim Kumar, et al. "ARG-ANNOT, a new bioinformatic tool to discover antibiotic resistance genes in bacterial genomes." Antimicrobial agents and chemotherapy 58.1 (2014): 212-220.
-
-Functional overlap of the Arabidopsis leaf and root microbiota. Bai Y, Müller DB, Srinivas G, Garrido-Oter R, Potthoff E, Rott M, Dombrowski N, Münch PC, Spaepen S, Remus-Emsermann M, Hüttel B, McHardy AC, Vorholt JA, Schulze-Lefert P. Nature. 2015 Dec 2. doi: 10.1038/nature16192.
