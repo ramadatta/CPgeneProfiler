@@ -134,31 +134,33 @@ filt_blast(cpgcov = 100,cpgpident = 100)
 ```
 
 This would generate following table:
-| assemblyName     	| qseqid                                    	| sseqid  	| qlen   	| slen 	| qstart 	| qend   	| length 	| pident 	| cov 	|
-|------------------	|-------------------------------------------	|---------	|--------	|------	|--------	|--------	|--------	|--------	|-----	|
-| genome_001.fasta 	| 4_length=71861_depth=1.95x_circular=true  	| KPC-2   	| 71861  	| 918  	| 3810   	| 4727   	| 918    	| 100    	| 100 	|
-| genome_001.fasta 	| 5_length=71851_depth=1.95x_circular=true  	| KPC-2   	| 71851  	| 918  	| 3810   	| 4727   	| 918    	| 100    	| 100 	|
-| genome_002.fasta 	| 5_length=51479_depth=1.31x_circular=true  	| OXA-181 	| 51479  	| 998  	| 31280  	| 32277  	| 998    	| 100    	| 100 	|
-| genome_003.fasta 	| 2_length=316292_depth=2.71x_circular=true 	| NDM-1   	| 316292 	| 1013 	| 149582 	| 150594 	| 1013   	| 100    	| 100 	|
-| genome_003.fasta 	| 2_length=316292_depth=2.71x_circular=true 	| OXA-181 	| 316292 	| 998  	| 49123  	| 50120  	| 998    	| 100    	| 100 	|
-| genome_004.fasta 	| 3_length=66727_depth=0.76x                	| OXA-181 	| 66727  	| 998  	| 49850  	| 50847  	| 998    	| 100    	| 100 	|
-| genome_004.fasta 	| 3_length=66727_depth=0.76x                	| OXA-181 	| 66727  	| 998  	| 43441  	| 44438  	| 998    	| 100    	| 100 	|
-| genome_004.fasta 	| 3_length=66727_depth=0.76x                	| OXA-181 	| 66727  	| 998  	| 37032  	| 38029  	| 998    	| 100    	| 100 	|
-| genome_005.fasta 	| 2_length=79441_depth=2.21x_circular=true  	| KPC-2   	| 79441  	| 918  	| 11390  	| 12307  	| 918    	| 100    	| 100 	|
-| genome_005.fasta 	| 2_length=79441_depth=2.21x_circular=true  	| KPC-2   	| 79441  	| 918  	| 3810   	| 4727   	| 918    	| 100    	| 100 	|
-| genome_007.fasta 	| 2_length=246469_depth=2.06x_circular=true 	| KPC-2   	| 246441 	| 918  	| 178390 	| 179307 	| 918    	| 100    	| 100 	|
-| genome_007.fasta 	| 2_length=246469_depth=2.06x_circular=true 	| IMP-26  	| 246441 	| 861  	| 145325 	| 146185 	| 861    	| 100    	| 100 	|
-| genome_008.fasta 	| 3_length=41186_depth=4.61x_circular=true  	| NDM-1   	| 41186  	| 1013 	| 23027  	| 24039  	| 1013   	| 100    	| 100 	|
-| genome_009.fasta 	| 4_length=41182_depth=4.10x_circular=true  	| NDM-1   	| 41182  	| 1013 	| 23023  	| 24035  	| 1013   	| 100    	| 100 	|
-| genome_010.fasta 	| 5_length=51479_depth=1.31x_circular=true  	| OXA-181 	| 51479  	| 998  	| 31280  	| 32277  	| 998    	| 100    	| 100 	|
-| genome_010.fasta 	| 3_length=41186_depth=4.61x_circular=true  	| NDM-1   	| 41186  	| 1013 	| 23027  	| 24039  	| 1013   	| 100    	| 100 	|
-| genome_012.fasta 	| 2_length=79441_depth=2.21x_circular=true  	| KPC-2   	| 79441  	| 918  	| 11390  	| 12307  	| 918    	| 100    	| 100 	|
-| genome_012.fasta 	| 2_length=79441_depth=2.21x_circular=true  	| KPC-2   	| 79441  	| 918  	| 3810   	| 4727   	| 918    	| 100    	| 100 	|
-| genome_013.fasta 	| 3_length=41186_depth=4.61x_circular=true  	| NDM-1   	| 41186  	| 1013 	| 23027  	| 24039  	| 1013   	| 100    	| 100 	|
-| genome_014.fasta 	| 4_length=41182_depth=4.10x_circular=true  	| NDM-1   	| 41182  	| 1013 	| 23023  	| 24035  	| 1013   	| 100    	| 100 	|
-| genome_015.fasta 	| 3_length=66727_depth=0.76x                	| OXA-181 	| 66727  	| 998  	| 49850  	| 50847  	| 998    	| 100    	| 100 	|
-| genome_015.fasta 	| 3_length=66727_depth=0.76x                	| OXA-181 	| 66727  	| 998  	| 43441  	| 44438  	| 998    	| 100    	| 100 	|
-| genome_015.fasta 	| 3_length=66727_depth=0.76x                	| OXA-181 	| 66727  	| 998  	| 37032  	| 38029  	| 998    	| 100    	| 100 	|
+
+| assemblyName     | qseqid                                    | sseqid  | qlen   | slen | qstart | qend   | length | pident | cov |
+|------------------|-------------------------------------------|---------|--------|------|--------|--------|--------|--------|-----|
+| genome_001.fasta | 4_length=71861_depth=1.95x_circular=true  | KPC-2   | 71861  | 918  | 3810   | 4727   | 918    | 100    | 100 |
+| genome_001.fasta | 5_length=71851_depth=1.95x_circular=true  | KPC-2   | 71851  | 918  | 3810   | 4727   | 918    | 100    | 100 |
+| genome_002.fasta | 5_length=51479_depth=1.31x_circular=true  | OXA-181 | 51479  | 998  | 31280  | 32277  | 998    | 100    | 100 |
+| genome_003.fasta | 2_length=316292_depth=2.71x_circular=true | NDM-1   | 316292 | 1013 | 149582 | 150594 | 1013   | 100    | 100 |
+| genome_003.fasta | 2_length=316292_depth=2.71x_circular=true | OXA-181 | 316292 | 998  | 49123  | 50120  | 998    | 100    | 100 |
+| genome_004.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 49850  | 50847  | 998    | 100    | 100 |
+| genome_004.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 43441  | 44438  | 998    | 100    | 100 |
+| genome_004.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 37032  | 38029  | 998    | 100    | 100 |
+| genome_005.fasta | 2_length=79441_depth=2.21x_circular=true  | KPC-2   | 79441  | 918  | 11390  | 12307  | 918    | 100    | 100 |
+| genome_005.fasta | 2_length=79441_depth=2.21x_circular=true  | KPC-2   | 79441  | 918  | 3810   | 4727   | 918    | 100    | 100 |
+| genome_007.fasta | 2_length=246469_depth=2.06x_circular=true | KPC-2   | 246441 | 918  | 178390 | 179307 | 918    | 100    | 100 |
+| genome_007.fasta | 2_length=246469_depth=2.06x_circular=true | IMP-26  | 246441 | 861  | 145325 | 146185 | 861    | 100    | 100 |
+| genome_008.fasta | 3_length=41186_depth=4.61x_circular=true  | NDM-1   | 41186  | 1013 | 23027  | 24039  | 1013   | 100    | 100 |
+| genome_009.fasta | 4_length=41182_depth=4.10x_circular=true  | NDM-1   | 41182  | 1013 | 23023  | 24035  | 1013   | 100    | 100 |
+| genome_010.fasta | 5_length=51479_depth=1.31x_circular=true  | OXA-181 | 51479  | 998  | 31280  | 32277  | 998    | 100    | 100 |
+| genome_010.fasta | 3_length=41186_depth=4.61x_circular=true  | NDM-1   | 41186  | 1013 | 23027  | 24039  | 1013   | 100    | 100 |
+| genome_012.fasta | 2_length=79441_depth=2.21x_circular=true  | KPC-2   | 79441  | 918  | 11390  | 12307  | 918    | 100    | 100 |
+| genome_012.fasta | 2_length=79441_depth=2.21x_circular=true  | KPC-2   | 79441  | 918  | 3810   | 4727   | 918    | 100    | 100 |
+| genome_013.fasta | 3_length=41186_depth=4.61x_circular=true  | NDM-1   | 41186  | 1013 | 23027  | 24039  | 1013   | 100    | 100 |
+| genome_014.fasta | 4_length=41182_depth=4.10x_circular=true  | NDM-1   | 41182  | 1013 | 23023  | 24035  | 1013   | 100    | 100 |
+| genome_015.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 49850  | 50847  | 998    | 100    | 100 |
+| genome_015.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 43441  | 44438  | 998    | 100    | 100 |
+| genome_015.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 37032  | 38029  | 998    | 100    | 100 |
+
 ##### **Step 3c: Finding cocarriage genes using `cocarriage()` command**
 
 `cocarriage()` commands finds if two or more CP genes exists in same contig or multiple contigs across all the input genome assemblies. This function can be used only after running `filt_blast()`. By default parameters, CP Gene Coverage and Percentage Identity are set to 100% (cpgcov=100, cpgpident=100) and can be adjusted.
