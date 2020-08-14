@@ -38,11 +38,11 @@ Generate a profile of carbapenamase genes from the genome assemblies
 	 reshape2,
 	 gridExtra
 	 
-- **External software:** 
+- **External software:** NCBI BLAST+ 
 
-    NCBI BLAST+ (program assumes blastn and makeblastdb commands are in path)
+    Note 1: R package assumes `blastn` and `makeblastdb` files are in path
     
-    Note: BLAST version 2.9.0+ was used for the present program although other BLAST+ similar to version 2.9.0+ parameters might also run without problems
+    Note 2: BLAST version 2.9.0+ was used for the present program although other BLAST+ similar to version 2.9.0+ parameters might also run without problems
     
 ##### **Installation**
 
