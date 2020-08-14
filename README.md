@@ -44,14 +44,37 @@ Generate a profile of carbapenamase genes from the genome assemblies
     
     Note 2: BLAST version 2.9.0+ was used for the present program although other BLAST+ similar to version 2.9.0+ parameters might also run without problems
     
-##### **Installation**
+#### **Installation**
+
+##### **From Github**
 
 The R package is available through github repository can be installed using devtools.
 
 ``` r 
 install.packages("devtools")
 devtools::install_github("ramadatta/CPgeneProfiler")
+library("CPgeneProfiler")
 ```
+
+##### **External software (REQUIRED)** 
+
+- Go to page: https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.9.0/
+
+- Save `ncbi-blast-2.9.0+-x64-linux.tar.gz` in the local directory
+
+- To install, simply extract the downloaded package using the following command
+
+```
+tar zxvpf ncbi-blast-2.9.0+-x64-linux.tar.gz
+```
+
+- Configure of NCBI BLAST+ executables using the following command. This would append the path to the new BLAST bin directory to the existing PATH setting.
+
+```
+export PATH=$PATH:$HOME/ncbi-blast-2.9.0+/bin
+```
+- Refer [here](https://www.ncbi.nlm.nih.gov/books/NBK52640/) for source documentation
+
 
 ##### **Check installation**
 Ensure you have installed the package properly:
@@ -64,7 +87,7 @@ Ensure you have installed the package properly:
 * Path of a directory with multiple FASTA files (can be in multiple contigs) 
 * Path of Carbapenamase Gene Database directory
 
-### **Usage**
+### **Example Usage**
 
 ##### **Step 1: Download CP gene database**
 
