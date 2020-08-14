@@ -167,28 +167,28 @@ db_summary()
 
 * A folder "CPgeneProfiler_Output" with the following files in respective directories
 
-File | Description
+Command | File | Description
 ----------|--------------
-assemblyStats.txt | A simple text file with N50, N90, Assembly Size for each assembly
-blastResults.filt.txt | Filtered blast results with contains contigs matching CPgenes (default: 100% identity and 100% coverage)
-blastResults.txt | Blast Results of contigs against the CP genes
-Co-carriage_Report.txt | Information of Number of assemblies with the co-carriage broken down to category
-CPContigSizeDist.txt | Contig Size distribution
-CPgeneProfile.png | Carbapenamase Gene Profile (default:png)
-cp_presence-absence_matrix.csv | Presence-absence matrix of CP genes across assemblies
-N50_N90.pdf | N50, N90 vs Assembly Size plot
-"CPGene"_Contig_Dist.png | CP gene contig length distribution (for each CP gene a seperate disribution plot is generated. Default image format: png)
-upset_plot.pdf | Set intersection plot of CP genes across all the input genome assemblies
-DiffCP_DiffContig.txt | Information of assemblies with different CP genes present in different contigs
-DiffCP_SameContig.txt | Information of assemblies with different CP genes present in same contigs 
-SameCP_DiffContig.txt | Information of assemblies with same CP genes present in different contigs
-SameCP_SameContig.txt | Information of assemblies with same CP genes present in same contigs
-SummaryPlots.pdf | All the plots in a single pdf file
+cpblast() | blastResults.txt | Blast Results of contigs against the CP genes
+filt_blast() | blastResults.filt.txt | Filtered blast results with contains contigs matching CPgenes (default: 100% identity and 100% coverage)
+cocarriage() | Co-carriage_Report.txt | Information of Number of assemblies with the co-carriage broken down to category
+cocarriage() | DiffCP_DiffContig.txt | Information of assemblies with different CP genes present in different contigs
+cocarriage() | DiffCP_SameContig.txt | Information of assemblies with different CP genes present in same contigs 
+cocarriage() | SameCP_DiffContig.txt | Information of assemblies with same CP genes present in different contigs
+cocarriage() | SameCP_SameContig.txt | Information of assemblies with same CP genes present in same contigs
+cpprofile() | CPgeneProfile.png | Carbapenamase Gene Profile (default:png)
+plot_conlen() | CPContigSizeDist.txt | Contig Size distribution
+plot_conlen() | "CPGene"_Contig_Dist.png | CP gene contig length distribution (for each CP gene a seperate disribution plot is generated. Default image format: png)
+upsetR_plot() | cp_presence-absence_matrix.csv | Presence-absence matrix of CP genes across assemblies
+upsetR_plot() | upset_plot.pdf | Set intersection plot of CP genes across all the input genome assemblies
+assemblystat() | N50_N90.pdf | N50, N90 vs Assembly Size plot
+assemblystat() | assemblyStats.txt | A simple text file with N50, N90, Assembly Size for each assembly
+cp_summarize() | SummaryPlots.pdf | All the plots in a single pdf file
 
 ## A few example plots created with `CPgeneProfiler`
 <img src="https://user-images.githubusercontent.com/3212461/90124520-1c1fd280-dd93-11ea-9ce3-f55ccf583b45.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124524-1cb86900-dd93-11ea-8960-53fa7a19aac9.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124487-10cca700-dd93-11ea-9572-dfc44a190dd6.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124536-1f1ac300-dd93-11ea-9acc-9435b79a7f1c.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124507-17f3b500-dd93-11ea-9f37-6167ec79b8a1.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124510-188c4b80-dd93-11ea-8609-1d3fbfc3ef43.png" width="45%"></img> 
 
-Figures: 1) Assembly Size vs N50 plot (Top left) 2) Assembly Size vs N90 plot (Top Right) 3) Carbapenamase Gene Profile CP gene-containing contig length plots KPC (Middle left) 4) Set intersection plot of CP genes across all the input genome assemblies (Middle right) 5-7) (Bottom left) 6)  (Bottom right)
+Figures: 1) Assembly Size vs N50 plot (Top left) 2) Assembly Size vs N90 plot (Top Right) 3) Carbapenamase Gene Profile CP gene-containing contig length plots KPC (Middle left) 4) Set intersection plot of CP genes across all the input genome assemblies (Middle right) 5-6) CP gene contig length distribution (Bottom right)
 
 ##### **Version**
 version 2.1.0
