@@ -168,7 +168,7 @@ db_summary()
 * A folder "CPgeneProfiler_Output" with the following files in respective directories
 
 Command | File | Description
-----------|--------------
+--------|------|--------------
 cpblast() | blastResults.txt | Blast Results of contigs against the CP genes
 filt_blast() | blastResults.filt.txt | Filtered blast results with contains contigs matching CPgenes (default: 100% identity and 100% coverage)
 cocarriage() | Co-carriage_Report.txt | Information of Number of assemblies with the co-carriage broken down to category
