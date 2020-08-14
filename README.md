@@ -27,9 +27,9 @@ Generate a profile of carbapenamase genes from the genome assemblies
  
  Currently the package works only on Unix systems.
  
-##### **Prior to CPgeneProfiler installation**
+##### **Requirements**
 
-- The following packages are supposed to be installed in R:
+- **R packages:**
 	 tidyverse,
 	 UpSetR,
 	 scales,
@@ -38,9 +38,9 @@ Generate a profile of carbapenamase genes from the genome assemblies
 	 reshape2,
 	 gridExtra
 	 
-- The following packages are supposed to be installed in Unix system
+- **External software:** 
 
-    Command line NCBI blast+ (program assumes blastn and makeblastdb commands are in path)
+    NCBI BLAST+ (program assumes blastn and makeblastdb commands are in path)
     
     Note: BLAST version 2.9.0+ was used for the present program although other BLAST+ similar to version 2.9.0+ parameters might also run without problems
     
