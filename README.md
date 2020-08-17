@@ -226,6 +226,9 @@ cocarriage(cpgcov = 100, cpgpident = 100)
 ``` r
 cpprofile(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbapenamase Genes", ylab="Assembly", title="Carbapenamase Gene Profile Heatmap", titlesize=15, labelsize=12,colorcode_low = "#143D59", colorcode_high = "#F4B41A", cpgcov=100, cpgpident=100)
 ```
+<p align="center">
+<img src="https://user-images.githubusercontent.com/3212461/90124487-10cca700-dd93-11ea-9572-dfc44a190dd6.png" width="45%"></img> 
+</p>
 
 ##### **Step 3e: Plot CP gene contig length distribution using `plot_conlen()` command**
 
@@ -234,6 +237,11 @@ cpprofile(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbap
 ``` r
 plot_conlen(outputType="tiff", width = 700, height = 700, res = 150, xlab="Contig Length", ylab="Number of Contigs", title=" Contig Length Distribution",element_text_angle=90,unit="KB", breaks=15, colorfill = "#F99245",cpgcov=100, cpgpident=100)
 ```
+<p align="center">
+<img src="https://user-images.githubusercontent.com/3212461/90124507-17f3b500-dd93-11ea-9f37-6167ec79b8a1.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90124510-188c4b80-dd93-11ea-8609-1d3fbfc3ef43.png" width="45%"></img>
+</p>
+
 ##### **Step 3f: Generate assembly statistics using `assemblystat()` command**
 
 `assemblystat()` generates basic assembly stats which includes N50 size, N90 size and Genome assembly size. This function also generates Assembly Size vs N50 plot and Assembly Size vs N50 plot. This function requires the location of fasta file directory. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors.
@@ -241,6 +249,11 @@ plot_conlen(outputType="tiff", width = 700, height = 700, res = 150, xlab="Conti
 ``` r
 assemblystat("/home/user/CPgeneProfiler/testData/fasta", outputType="png", width = 700, height = 700, res = 150, geom_point_size=3, n50colorfill = "#0072B2", n90colorfill = "#D55E00")
 ```
+<p align="center">
+<img src="https://user-images.githubusercontent.com/3212461/90124520-1c1fd280-dd93-11ea-9ce3-f55ccf583b45.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90124524-1cb86900-dd93-11ea-8960-53fa7a19aac9.png" width="45%"></img> 
+</p>
+
 ##### **Step 3g: Generate Set Intersection of CP genes using `upsetR_plot()` command**
 
 `upsetR_plot()` generates set intersection plot of CP genes across all the input genome assemblies. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors.
@@ -248,6 +261,10 @@ assemblystat("/home/user/CPgeneProfiler/testData/fasta", outputType="png", width
 ``` r
 upsetR_plot(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbapenamase Gene Set Size", ylab="Number of genome assemblies",cpgcov=100, cpgpident=100, order.by = "degree",nsets = 40, number.angles = 0,point.size = 1.5, line.size = 1,sets.bar.color = "red")
 ```
+<p align="center">
+<img src="https://user-images.githubusercontent.com/3212461/90124536-1f1ac300-dd93-11ea-9acc-9435b79a7f1c.png" width="45%"></img> 
+</p>
+
 ##### **Step 3h: Summarize all the results using `cp_summarize()` command**
 
 `cp_summarize()` arranges all the output files generated from above commands into respective folders. This also creates a summary of all the plots from CPgeneProfiler output into a single PDF file. Users can specify the output directory name and summary pdf name. To summarize, this commands reqiures all the output image plots to have same format i.e, either png/tiff/jpeg.
