@@ -1,0 +1,9 @@
+
+
+Building a new DB, current time: 08/17/2020 15:06:55
+New DB name:   /home/prakki/Desktop/testing/testData/db/NCBI_BARRGD_CPG.DB
+New DB title:  NCBI_BARRGD_CPG_DB.fasta
+Sequence type: Nucleotide
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 1062 sequences in 0.055141 seconds.
