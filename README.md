@@ -27,6 +27,12 @@ Generate a profile of carbapenamase genes from the genome assemblies
  
  Currently the package works only on Unix systems.
  
+ 
+##### **Input Requirements**
+* Path of a directory with multiple FASTA files (can be in multiple contigs) 
+* Path of Carbapenamase Gene Database directory
+
+ 
 ##### **Requirements**
 
 - **R packages:**
@@ -82,10 +88,6 @@ Ensure you have installed the package properly:
 ``` r
 ?CPgeneProfiler
 ```
-
-##### **Input Requirements**
-* Path of a directory with multiple FASTA files (can be in multiple contigs) 
-* Path of Carbapenamase Gene Database directory
 
 ### **Example Usage**
 
