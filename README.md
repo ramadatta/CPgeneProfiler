@@ -96,48 +96,49 @@ Ensure you have installed the package properly:
 
 - Generates NCBI BLAST Results by aligning input genome assemblies against Carbapenamase (CP) gene database
 
-```
+``` r
 cpblast(fastalocation = "/home/user/CPgeneProfiler/testData/fasta", dblocation = "/home/user/CPgeneProfiler/testData/db")
 
 ```
 - Filtering NCBI BLAST Results based on CP gene coverage and percent identity
 
-```
+``` r
 filt_blast(cpgcov = 100, cpgpident = 100)
 ```
 
 - Report cocarriage genes across all the input genome assemblies
 
-```
+``` r
 cocarriage(cpgcov = 100, cpgpident = 100)
 ```
 
 - Generate CP gene Profile
 
-```
+``` r
 cpprofile()
 ```
 
 - Plot CP gene contig length distributions across all the input genome assemblies
-```
+
+``` r
 plot_conlen()
 ```
 
 - Generate Basic assembly statistics
 
-```
+``` r
 assemblystat("/home/user/CPgeneProfiler/testData/fasta")
 ```
 
 - Summarize the plots and organize all the output files
 
-```
+``` r
 cp_summarize()
 ```
 
 - Database information
 
-```
+``` r
 db_summary()
 ```
 
