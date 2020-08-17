@@ -90,8 +90,60 @@ Ensure you have installed the package properly:
 ```
 
 ### **Example Usage**
+ 
+`CPgeneProfiler` package can be run using the following functions: `cpblast()`, `filt_blast()`, `cocarriage()`, `cpprofile()`, `upsetR_plot()`, `plot_conlen()`,`assemblystat()`, `cp_summarize()`, `db_summary()`. Below are the examples of `CPgeneProfiler` commands usage. 
 
-##### **Step 1: Download CP gene database**
+
+- Generates NCBI BLAST Results by aligning input genome assemblies against Carbapenamase (CP) gene database
+
+```
+cpblast(fastalocation = "/home/user/CPgeneProfiler/testData/fasta", dblocation = "/home/user/CPgeneProfiler/testData/db")
+
+```
+- Filtering NCBI BLAST Results based on CP gene coverage and percent identity
+
+```
+filt_blast(cpgcov = 100, cpgpident = 100)
+```
+
+- Report cocarriage genes across all the input genome assemblies
+
+```
+cocarriage(cpgcov = 100, cpgpident = 100)
+```
+
+- Generate CP gene Profile
+
+```
+cpprofile()
+```
+
+- Plot CP gene contig length distributions across all the input genome assemblies
+```
+plot_conlen()
+```
+
+- Generate Basic assembly statistics
+
+```
+assemblystat("/home/user/CPgeneProfiler/testData/fasta")
+```
+
+- Summarize the plots and organize all the output files
+
+```
+cp_summarize()
+```
+
+- Database information
+
+```
+db_summary()
+```
+
+### **Working with `testData`**
+
+#### **CP gene Database Download (REQUIRED)**
 
 Go to the UNIX/Linux command line terminal and download the `db` folder with SVN
 
@@ -100,7 +152,7 @@ svn export https://github.com/ramadatta/CPgeneProfiler/trunk/testData/db
 ```
 else simply [Click](https://downgit.github.io/#/home?url=https://github.com/ramadatta/CPgeneProfiler/tree/master/testData/db) to save database folder and uncompress the `db.zip` folder.
 
-##### **Step 2: Download test input data**
+#### **Test Data Download (OPTIONAL)**
 
 To test the package with test input data, Go to the UNIX/Linux command line terminal and download the `fasta` folder with SVN
 
@@ -109,13 +161,8 @@ svn export https://github.com/ramadatta/CPgeneProfiler/trunk/testData/fasta
 ```
 else simply [Click](https://downgit.github.io/#/home?url=https://github.com/ramadatta/CPgeneProfiler/tree/master/testData/fasta) to save fasta folder and uncompress the `fasta.zip` folder.
 
-##### **Step 3: Run the package**
-
-`CPgeneProfiler` package can be run using the following functions: `cpblast()`, `filt_blast()`, `cocarriage()`, `cpprofile()`, `upsetR_plot()`, `plot_conlen()`,`assemblystat()`, `cp_summarize()`, `db_summary()`
-
 
 ##### **Step 3a: A simple NCBI BLAST using `cpblast()` command**
-
 
 As a first step, CPgeneProfiler generates NCBI BLAST Results by aligning input genome assemblies against Carbapenamase (CP) gene database. Now that you already have a directory with fasta files (should have extensions `.fasta` or `.fa`) in `fasta` folder and cp gene database sequence in `db` folder, you can specify the path of both directories as an input and run the package with `cpblast()` command.
 
@@ -139,29 +186,29 @@ This would generate following table:
 
 | assemblyName     | qseqid                                    | sseqid  | qlen   | slen | qstart | qend   | length | pident | cov |
 |------------------|-------------------------------------------|---------|--------|------|--------|--------|--------|--------|-----|
-| genome_001.fasta | 4_length=71861_depth=1.95x_circular=true  | KPC-2   | 71861  | 918  | 3810   | 4727   | 918    | 100    | 100 |
-| genome_001.fasta | 5_length=71851_depth=1.95x_circular=true  | KPC-2   | 71851  | 918  | 3810   | 4727   | 918    | 100    | 100 |
-| genome_002.fasta | 5_length=51479_depth=1.31x_circular=true  | OXA-181 | 51479  | 998  | 31280  | 32277  | 998    | 100    | 100 |
-| genome_003.fasta | 2_length=316292_depth=2.71x_circular=true | NDM-1   | 316292 | 1013 | 149582 | 150594 | 1013   | 100    | 100 |
-| genome_003.fasta | 2_length=316292_depth=2.71x_circular=true | OXA-181 | 316292 | 998  | 49123  | 50120  | 998    | 100    | 100 |
-| genome_004.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 49850  | 50847  | 998    | 100    | 100 |
-| genome_004.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 43441  | 44438  | 998    | 100    | 100 |
-| genome_004.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 37032  | 38029  | 998    | 100    | 100 |
-| genome_005.fasta | 2_length=79441_depth=2.21x_circular=true  | KPC-2   | 79441  | 918  | 11390  | 12307  | 918    | 100    | 100 |
-| genome_005.fasta | 2_length=79441_depth=2.21x_circular=true  | KPC-2   | 79441  | 918  | 3810   | 4727   | 918    | 100    | 100 |
-| genome_007.fasta | 2_length=246469_depth=2.06x_circular=true | KPC-2   | 246441 | 918  | 178390 | 179307 | 918    | 100    | 100 |
-| genome_007.fasta | 2_length=246469_depth=2.06x_circular=true | IMP-26  | 246441 | 861  | 145325 | 146185 | 861    | 100    | 100 |
-| genome_008.fasta | 3_length=41186_depth=4.61x_circular=true  | NDM-1   | 41186  | 1013 | 23027  | 24039  | 1013   | 100    | 100 |
-| genome_009.fasta | 4_length=41182_depth=4.10x_circular=true  | NDM-1   | 41182  | 1013 | 23023  | 24035  | 1013   | 100    | 100 |
-| genome_010.fasta | 5_length=51479_depth=1.31x_circular=true  | OXA-181 | 51479  | 998  | 31280  | 32277  | 998    | 100    | 100 |
-| genome_010.fasta | 3_length=41186_depth=4.61x_circular=true  | NDM-1   | 41186  | 1013 | 23027  | 24039  | 1013   | 100    | 100 |
-| genome_012.fasta | 2_length=79441_depth=2.21x_circular=true  | KPC-2   | 79441  | 918  | 11390  | 12307  | 918    | 100    | 100 |
-| genome_012.fasta | 2_length=79441_depth=2.21x_circular=true  | KPC-2   | 79441  | 918  | 3810   | 4727   | 918    | 100    | 100 |
-| genome_013.fasta | 3_length=41186_depth=4.61x_circular=true  | NDM-1   | 41186  | 1013 | 23027  | 24039  | 1013   | 100    | 100 |
-| genome_014.fasta | 4_length=41182_depth=4.10x_circular=true  | NDM-1   | 41182  | 1013 | 23023  | 24035  | 1013   | 100    | 100 |
-| genome_015.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 49850  | 50847  | 998    | 100    | 100 |
-| genome_015.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 43441  | 44438  | 998    | 100    | 100 |
-| genome_015.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 37032  | 38029  | 998    | 100    | 100 |
+| genome_001.fasta | 4_length=71861_depth=1.95x_circular=true  | KPC-2   | 71861  | 918  | 3810   | 4727   | 918  | 100 | 100 |
+| genome_001.fasta | 5_length=71851_depth=1.95x_circular=true  | KPC-2   | 71851  | 918  | 3810   | 4727   | 918  | 100 | 100 |
+| genome_002.fasta | 5_length=51479_depth=1.31x_circular=true  | OXA-181 | 51479  | 998  | 31280  | 32277  | 998  | 100 | 100 |
+| genome_003.fasta | 2_length=316292_depth=2.71x_circular=true | NDM-1   | 316292 | 1013 | 149582 | 150594 | 1013 | 100 | 100 |
+| genome_003.fasta | 2_length=316292_depth=2.71x_circular=true | OXA-181 | 316292 | 998  | 49123  | 50120  | 998  | 100 | 100 |
+| genome_004.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 49850  | 50847  | 998  | 100 | 100 |
+| genome_004.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 43441  | 44438  | 998  | 100 | 100 |
+| genome_004.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 37032  | 38029  | 998  | 100 | 100 |
+| genome_005.fasta | 2_length=79441_depth=2.21x_circular=true  | KPC-2   | 79441  | 918  | 11390  | 12307  | 918  | 100 | 100 |
+| genome_005.fasta | 2_length=79441_depth=2.21x_circular=true  | KPC-2   | 79441  | 918  | 3810   | 4727   | 918  | 100 | 100 |
+| genome_007.fasta | 2_length=246497_depth=2.06x_circular=true | KPC-2   | 246497 | 918  | 178390 | 179307 | 918  | 100 | 100 |
+| genome_007.fasta | 2_length=246497_depth=2.06x_circular=true | IMP-26  | 246497 | 861  | 145325 | 146185 | 861  | 100 | 100 |
+| genome_008.fasta | 3_length=41186_depth=4.61x_circular=true  | NDM-1   | 41186  | 1013 | 23027  | 24039  | 1013 | 100 | 100 |
+| genome_009.fasta | 4_length=41182_depth=4.10x_circular=true  | NDM-1   | 41182  | 1013 | 23023  | 24035  | 1013 | 100 | 100 |
+| genome_010.fasta | 5_length=51479_depth=1.31x_circular=true  | OXA-181 | 51479  | 998  | 31280  | 32277  | 998  | 100 | 100 |
+| genome_010.fasta | 3_length=41186_depth=4.61x_circular=true  | NDM-1   | 41186  | 1013 | 23027  | 24039  | 1013 | 100 | 100 |
+| genome_012.fasta | 2_length=79441_depth=2.21x_circular=true  | KPC-2   | 79441  | 918  | 11390  | 12307  | 918  | 100 | 100 |
+| genome_012.fasta | 2_length=79441_depth=2.21x_circular=true  | KPC-2   | 79441  | 918  | 3810   | 4727   | 918  | 100 | 100 |
+| genome_013.fasta | 3_length=41186_depth=4.61x_circular=true  | NDM-1   | 41186  | 1013 | 23027  | 24039  | 1013 | 100 | 100 |
+| genome_014.fasta | 4_length=41182_depth=4.10x_circular=true  | NDM-1   | 41182  | 1013 | 23023  | 24035  | 1013 | 100 | 100 |
+| genome_015.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 49850  | 50847  | 998  | 100 | 100 |
+| genome_015.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 43441  | 44438  | 998  | 100 | 100 |
+| genome_015.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 37032  | 38029  | 998  | 100 | 100 |
 
 ##### **Step 3c: Finding cocarriage genes using `cocarriage()` command**
 
