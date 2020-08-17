@@ -1,0 +1,28 @@
+
+
+========++++++++KPC-2 Contig Size Distribution+++++++++++============
+
+ContigSize_Range CPContig_Number
+71851-81851 6
+241851-251851 1
+
+
+========++++++++OXA-181 Contig Size Distribution+++++++++++============
+
+ContigSize_Range CPContig_Number
+51479-61479 2
+61479-71479 6
+311479-321479 1
+
+
+========++++++++NDM-1 Contig Size Distribution+++++++++++============
+
+ContigSize_Range CPContig_Number
+41182-51182 5
+311182-321182 1
+
+
+========++++++++IMP-26 Contig Size Distribution+++++++++++============
+
+ContigSize_Range CPContig_Number
+246441-256441 1
