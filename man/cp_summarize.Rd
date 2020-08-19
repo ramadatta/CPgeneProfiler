@@ -5,12 +5,15 @@
 \title{CPgeneProfiler Results Summary}
 \usage{
 cp_summarize(
+  outdir_loc = "CPgeneProfiler_Output",
   outdir = "CPgeneProfiler_Output",
   report = "SummaryPlots",
   image = "png"
 )
 }
 \arguments{
+\item{outdir_loc}{output directory location (By default, output directory will be created in the input folder)}
+
 \item{outdir}{output directory (default: CPgeneProfiler_Output)}
 
 \item{report}{PDF Summary of all the plots (default: Summary)}
@@ -23,5 +26,5 @@ Summarize all the results from CPgeneProfiler output
 \examples{
 
 cp_summarize()
-cp_summarize(outdir = "CPgeneProfiler_Output", report="Summary" , image = "png")
+cp_summarize(outdir = "/home/user/Desktop", report="Summary" , image = "png")
 }

@@ -7,8 +7,10 @@
 #' @param fastalocation Location of the folder with only fasta files. The files
 #' must end with either `.fasta` or `.fa` format
 #' @param dblocation Location of the `NCBI_BARRGD_CPG_DB.fasta` (CP gene database)
-#' @param num_threads Number of threads to run the blast (default=16)
-#' @param evalue Cutoff e-value for blast hit (default="1e-6")
+#' @param num_threads Number of threads to run the blast (default = 16)
+#' @param evalue Cutoff e-value for blast hit (default = "1e-6")
+#' @param word_size <Integer, >=4> Word size for wordfinder algorithm (default = 28)
+#' @param max_target_seqs Maximum number of aligned sequences to keep (value of 5 or more is recommended, default = 500)
 #'
 #' @export
 #' @examples
@@ -16,7 +18,7 @@
 #' cpblast("/home/user/CPgeneProfiler/testData/fasta","/home/user/CPgeneProfiler/testData/db")
 #' cpblast(fastalocation = "/home/user/CPgeneProfiler/testData/fasta",dblocation = "/home/user/CPgeneProfiler/testData/db",num_threads = 8,evalue = "1e-6")
 
-cpblast <- function(fastalocation,dblocation,num_threads="16",evalue="1e-6"){
+cpblast <- function(fastalocation, dblocation, num_threads = "4", evalue = "1e-6", word_size = "28" , max_target_seqs = "500"){  
 
   # Remove BLAST Results if already exists
 
@@ -110,6 +112,10 @@ cpblast <- function(fastalocation,dblocation,num_threads="16",evalue="1e-6"){
                            "-evalue",
                            evalue,
                            "-ungapped",
+                           "-word_size",
+                           word_size,
+                           "-max_target_seqs",
+                           max_target_seqs,
                            "-num_threads",
                            num_threads
                          ),

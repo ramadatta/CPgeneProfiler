@@ -9,10 +9,10 @@
 #' @examples
 #'
 #' filt_blast()
-#' filt_blast(cpgcov=100,cpgpident=100)
+#' filt_blast(cpgcov=100, cpgpident=100)
 
 
-filt_blast <- function(cpgcov=100,cpgpident=100){
+filt_blast <- function(cpgcov=100, cpgpident=100){
 
     blastResults_df <- cpcore()
 

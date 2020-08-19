@@ -11,7 +11,7 @@
 #' @examples
 #'
 #' cocarriage()
-#' cocarriage(cpgcov=100,cpgpident=100)
+#' cocarriage(cpgcov=100, cpgpident=100)
 
 cocarriage <- function(cpgcov=100,cpgpident=100){
 
@@ -19,9 +19,8 @@ cocarriage <- function(cpgcov=100,cpgpident=100){
 
   blastResults.filt <-
     blastResults_df[blastResults_df$cov >= cpgcov &
-                      blastResults_df$pident >= cpgpident, c("assemblyName" , "qseqid", "sseqid", "qlen","slen", "qstart", "qend", "length","pident", "cov")] # subsets only the gene name with if CP gene has 100% cov
-
-# # 3) Report how many Assemblies have co-carriage
+                      blastResults_df$pident >= cpgpident, c("assemblyName", "qseqid", "sseqid", "pident", "nident", "length", "mismatch", "gapopen", "qstart", "qend", "sstart", "send", "evalue", "bitscore", "qlen", "slen", "cov")] # subsets only the gene name with if CP gene has 100% cov
+  # # 3) Report how many Assemblies have co-carriage
 
 dupAssemblies_logical <-
   duplicated(blastResults.filt[, c("assemblyName")]) |
@@ -124,26 +123,31 @@ DiffCP_SameContig_Count <- length(unique(DiffCP_SameContig$assemblyName))
 cat(
   "Assemblies with SameCP_SameContig_Count are : ",
   SameCP_SameContig_Count,
-  file = "Co-carriage_Report.txt",
+  file = "Cocarriage_Report.txt",
   append = TRUE
 )
 cat(
   "\nAssemblies with SameCP_DiffContig_Count are : ",
   SameCP_DiffContig_Count,
-  file = "Co-carriage_Report.txt",
+  file = "Cocarriage_Report.txt",
   append = TRUE
 )
 cat(
   "\nAssemblies with DiffCP_DiffContig_Count are : ",
   DiffCP_DiffContig_Count,
-  file = "Co-carriage_Report.txt",
+  file = "Cocarriage_Report.txt",
   append = TRUE
 )
 cat(
   "\nAssemblies with DiffCP_SameContig_Count are : ",
   DiffCP_SameContig_Count,
-  file = "Co-carriage_Report.txt",
+  file = "Cocarriage_Report.txt",
   append = TRUE
 )
+
+system(command="cat SameCP_SameContig.txt >Cocarriage_combinedResults.txt", wait=TRUE)
+system(command="tail -n+2 SameCP_DiffContig.txt >>Cocarriage_combinedResults.txt", wait=TRUE)
+system(command="tail -n+2 DiffCP_SameContig.txt >>Cocarriage_combinedResults.txt", wait=TRUE)
+system(command="tail -n+2 DiffCP_DiffContig.txt >>Cocarriage_combinedResults.txt", wait=TRUE)
 
 }

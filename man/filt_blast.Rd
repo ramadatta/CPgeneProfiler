@@ -18,5 +18,5 @@ The filter is based on CP gene coverage and Percentage Identity
 \examples{
 
 filt_blast()
-filt_blast(cpgcov=100,cpgpident=100)
+filt_blast(cpgcov=100, cpgpident=100)
 }

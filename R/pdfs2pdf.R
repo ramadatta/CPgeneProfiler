@@ -26,7 +26,7 @@ pdfs2pdf <- function(outdir = "CPgeneProfiler_Output", report="Summary")
   files.to.move <- list.files(pattern = "^blastResults.*")
   files2move(files.to.move,outdir,subdir="1_CP_BLAST_Results")
 
-  files.to.move <- list.files(pattern = "Co-carriage_Report|SameCP|DiffCP")
+  files.to.move <- list.files(pattern = "Cocarriage_|SameCP|DiffCP")
   files2move(files.to.move,outdir,subdir="2_Cocarriage_Results")
 
   files.to.move <- list.files(pattern = "CPgeneProfile\\.|cp_presence-absence_matrix")

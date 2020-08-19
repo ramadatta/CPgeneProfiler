@@ -4,7 +4,14 @@
 \alias{cpblast}
 \title{Generate NCBI BLAST Results by aligning input genome assemblies against Carbapenamase (CP) gene database}
 \usage{
-cpblast(fastalocation, dblocation, num_threads = "16", evalue = "1e-6")
+cpblast(
+  fastalocation,
+  dblocation,
+  num_threads = "4",
+  evalue = "1e-6",
+  word_size = "28",
+  max_target_seqs = "500"
+)
 }
 \arguments{
 \item{fastalocation}{Location of the folder with only fasta files. The files
@@ -12,9 +19,13 @@ must end with either \code{.fasta} or \code{.fa} format}
 
 \item{dblocation}{Location of the \code{NCBI_BARRGD_CPG_DB.fasta} (CP gene database)}
 
-\item{num_threads}{Number of threads to run the blast (default=16)}
+\item{num_threads}{Number of threads to run the blast (default = 16)}
 
-\item{evalue}{Cutoff e-value for blast hit (default="1e-6")}
+\item{evalue}{Cutoff e-value for blast hit (default = "1e-6")}
+
+\item{word_size}{<Integer, >=4> Word size for wordfinder algorithm (default = 28)}
+
+\item{max_target_seqs}{Maximum number of aligned sequences to keep (value of 5 or more is recommended, default = 500)}
 }
 \description{
 Prior to running this command, the \code{NCBI_BARRGD_CPG_DB.fasta} file is expected to be

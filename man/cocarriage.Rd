@@ -19,5 +19,5 @@ or multiple contigs. This function should be used after running
 \examples{
 
 cocarriage()
-cocarriage(cpgcov=100,cpgpident=100)
+cocarriage(cpgcov=100, cpgpident=100)
 }
