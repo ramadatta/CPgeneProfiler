@@ -106,34 +106,34 @@ cpblast(fastalocation = "/home/user/CPgeneProfiler/testData/fasta", dblocation =
 filt_blast(cpgcov = 100, cpgpident = 100)
 ```
 
-- Report cocarriage genes across all the input genome assemblies
+- Report cocarriage of CP genes across all the input genome assemblies
 
 ``` r
 cocarriage(cpgcov = 100, cpgpident = 100)
 ```
 
-- Generate CP gene Profile
+- Generate CP gene Profile across all the input genome assemblies
 
 ``` r
-cpprofile()
+cpprofile(xlab = "Carbapenamase Genes", ylab = "Assembly", title = "Carbapenamase Gene Profile Heatmap")
 ```
 
 - Plot CP gene contig length distributions across all the input genome assemblies
 
 ``` r
-plot_conlen()
+plot_conlen(outputType = "png", xlab = "Contig Length", ylab = "Number of Contigs", title = " Contig Length Distribution", colorfill = "#F99245")
 ```
 
-- Generate Basic assembly statistics
+- Generate basic assembly statistics such N50, N90 and Assembly Size and plots comparing Assembly Size with N50, N90 stats
 
 ``` r
-assemblystat("/home/user/CPgeneProfiler/testData/fasta")
+assemblystat(fastalocation = "/home/user/CPgeneProfiler/testData/fasta")
 ```
 
-- Summarize the plots and organize all the output files
+- Summarize the plots and organize all the output files in specific folders
 
 ``` r
-cp_summarize()
+cp_summarize(outdir_loc = "/home/user/Desktop", outdir = "CPgeneProfiler_Output")
 ```
 
 - Database information
@@ -163,27 +163,25 @@ svn export https://github.com/ramadatta/CPgeneProfiler/trunk/testData/fasta
 else simply [Click](https://downgit.github.io/#/home?url=https://github.com/ramadatta/CPgeneProfiler/tree/master/testData/fasta) to save fasta folder and uncompress the `fasta.zip` folder.
 
 
-##### **Step 3a: A simple NCBI BLAST using `cpblast()` command**
+##### **Step 1: A simple NCBI BLAST using `cpblast()` command**
 
 As a first step, CPgeneProfiler generates NCBI BLAST Results by aligning input genome assemblies against Carbapenamase (CP) gene database. Now that you already have a directory with fasta files (should have extensions `.fasta` or `.fa`) in `fasta` folder and cp gene database sequence in `db` folder, you can specify the path of both directories as an input and run the package with `cpblast()` command.
 
 ``` r
-cpblast(fastalocation = "/home/user/CPgeneProfiler/testData/fasta",dblocation = "/home/user/CPgeneProfiler/testData/db",num_threads = 4,evalue = "1e-3")
+cpblast(fastalocation = "/home/user/CPgeneProfiler/testData/fasta", dblocation = "/home/user/CPgeneProfiler/testData/db", num_threads = 4, evalue = "1e-3")
 ```
-The users can adjust BLAST parameters `num_threads` and `evalue` accordingly. If not adjusted, the package runs with default parameters (`num_threads` = 8, `evalue` = "1e-6")
+The users can adjust BLAST parameters `num_threads`, `evalue`, `word_size` and `max_target_seqs` accordingly. If not adjusted and command is simply executed with the file locations for `fasta` and `db`, then default parameters are used for the analysis.
 
 
-##### **Step 3b: Filtering BLAST results using `filt_blast()` command**
+##### **Step 2: Filtering BLAST results using `filt_blast()` command**
 
-`filt_blast()` then filters the output BLAST results obtained from `cpblast()` command. The BLAST hits are filtered based on CP gene coverage and Percentage Identity. By default parameters, CP Gene Coverage and Percentage Identity are set to 100% (cpgcov=100, cpgpident=100). This means that a CP gene should have 100% alignment length and 100% identity, without even a single mismatch. 
-
-If the users find the default cutoff stringent to pick up the genes in the assemblies, then the parameters can be adjusted to desired parameters. 
+`filt_blast()` then filters the output BLAST results obtained from `cpblast()` command. This filtering is to find the presence of CP genes given a particular CP gene coverage and Percentage Identity. Therefore, the BLAST hits are filtered based on CP gene coverage and Percentage Identity. By default, CP Gene Coverage and Percentage Identity are set at a threshold of 100% (cpgcov=100, cpgpident=100). This means that a CP gene should have 100% alignment length and 100% identity, without even a single mismatch with the input genome sequence. The default parameters can be adjusted.
 
 ``` r
-filt_blast(cpgcov = 100,cpgpident = 100)
+filt_blast(cpgcov = 100, cpgpident = 100)
 ```
 
-This would generate following table:
+This should generate the following table:
 
 | assemblyName     | qseqid                                    | sseqid  | qlen   | slen | qstart | qend   | length | pident | cov |
 |------------------|-------------------------------------------|---------|--------|------|--------|--------|--------|--------|-----|
@@ -213,7 +211,7 @@ This would generate following table:
 
 ##### **Step 3c: Finding cocarriage genes using `cocarriage()` command**
 
-`cocarriage()` commands finds if two or more CP genes exists in same contig or multiple contigs across all the input genome assemblies. This function can be used only after running `filt_blast()`. By default parameters, CP Gene Coverage and Percentage Identity are set to 100% (cpgcov=100, cpgpident=100) and can be adjusted.
+`cocarriage()` command finds if two or more CP genes exists in same contig or multiple contigs across all the input genome assemblies. This function can be used only after running `filt_blast()`. By default parameters, CP Gene Coverage and Percentage Identity are set to 100% (cpgcov=100, cpgpident=100) and can be adjusted.
 
 ``` r
 cocarriage(cpgcov = 100, cpgpident = 100)
@@ -221,10 +219,10 @@ cocarriage(cpgcov = 100, cpgpident = 100)
 
 ##### **Step 3d: Finding CP gene profile using `cpprofile()` command**
 
-`cpprofile()` creates a heatmap of carbapenamase gene profile from the input genome assemblies. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors of the heatmap.
+`cpprofile()` creates a heatmap of CP gene profile across the input genome assemblies. By default, the command generates `png` image but user play with other output formats (jpeg/tiff/pdf) and parameters such as width, height of image, label, titles and colors of the heatmap.
 
 ``` r
-cpprofile(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbapenamase Genes", ylab="Assembly", title="Carbapenamase Gene Profile Heatmap", titlesize=15, labelsize=12,colorcode_low = "#143D59", colorcode_high = "#F4B41A", cpgcov=100, cpgpident=100)
+cpprofile(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbapenamase Genes", ylab="Assembly", title="Carbapenamase Gene Profile Heatmap", titlesize=15, labelsize=12, colorcode_low = "#143D59", colorcode_high = "#F4B41A", cpgcov=100, cpgpident=100)
 ```
 <p align="center">
 <img src="https://user-images.githubusercontent.com/3212461/90124487-10cca700-dd93-11ea-9572-dfc44a190dd6.png" width="45%"></img> 
@@ -232,7 +230,7 @@ cpprofile(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbap
 
 ##### **Step 3e: Plot CP gene contig length distribution using `plot_conlen()` command**
 
-`plot_conlen()` generates length distribution for all the CP gene contigs present across all the input genome assemblies. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors.
+`plot_conlen()` generates length distribution for all the CP gene contigs present across all the input genome assemblies.By default, the command generates `png` image but user play with other output formats (jpeg/tiff/pdf) and parameters such as width, height of image, label, titles and colors.
 
 ``` r
 plot_conlen(outputType="tiff", width = 700, height = 700, res = 150, xlab="Contig Length", ylab="Number of Contigs", title=" Contig Length Distribution",element_text_angle=90,unit="KB", breaks=15, colorfill = "#F99245",cpgcov=100, cpgpident=100)
@@ -244,7 +242,7 @@ plot_conlen(outputType="tiff", width = 700, height = 700, res = 150, xlab="Conti
 
 ##### **Step 3f: Generate assembly statistics using `assemblystat()` command**
 
-`assemblystat()` generates basic assembly stats which includes N50 size, N90 size and Genome assembly size. This function also generates Assembly Size vs N50 plot and Assembly Size vs N50 plot. This function requires the location of fasta file directory. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors.
+`assemblystat()` generates basic assembly stats which includes N50 size, N90 size and Genome assembly size. This function also generates Assembly Size vs N50 plot and Assembly Size vs N90 plot. This function requires the location of fasta file directory. By default, the command generates `png` image plots.
 
 ``` r
 assemblystat("/home/user/CPgeneProfiler/testData/fasta", outputType="png", width = 700, height = 700, res = 150, geom_point_size=3, n50colorfill = "#0072B2", n90colorfill = "#D55E00")
@@ -267,7 +265,7 @@ upsetR_plot(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carb
 
 ##### **Step 3h: Summarize all the results using `cp_summarize()` command**
 
-`cp_summarize()` arranges all the output files generated from above commands into respective folders. This also creates a summary of all the plots from CPgeneProfiler output into a single PDF file. Users can specify the output directory name and summary pdf name. To summarize, this commands reqiures all the output image plots to have same format i.e, either png/tiff/jpeg.
+`cp_summarize()` arranges all the output files generated from above commands into respective folders. This also creates a summary of all the plots from CPgeneProfiler output into a single PDF file. Users can specify the output directory name and summary pdf name and also can provide the location of where the output folder to be generated. Note: All the output image plots need to be in the same format i.e, either png/tiff/jpeg.
 
 ``` r
 cp_summarize(outdir = "CPgeneProfiler_Output", report="Summary" , image = "png")
@@ -288,18 +286,19 @@ db_summary()
 Command | File | Description
 --------|------|--------------
 cpblast() | blastResults.txt | Blast Results of contigs against the CP genes
-filt_blast() | blastResults.filt.txt | Filtered blast results with contains contigs matching CPgenes (default: 100% identity and 100% coverage)
-cocarriage() | Co-carriage_Report.txt | Information of Number of assemblies with the co-carriage broken down to category
+filt_blast() | blastResults.filt.txt | Filtered blast results with contains contigs matching CP genes (default: 100% identity and 100% coverage)
+cocarriage() | Cocarriage_Report.txt | Information of Number of assemblies with the co-carriage broken down to category
+cocarriage() | Cocarriage_combinedResults.txt | Combined cocarriage details across all the assemblies
 cocarriage() | DiffCP_DiffContig.txt | Information of assemblies with different CP genes present in different contigs
 cocarriage() | DiffCP_SameContig.txt | Information of assemblies with different CP genes present in same contigs 
 cocarriage() | SameCP_DiffContig.txt | Information of assemblies with same CP genes present in different contigs
 cocarriage() | SameCP_SameContig.txt | Information of assemblies with same CP genes present in same contigs
 cpprofile() | CPgeneProfile.png | Carbapenamase Gene Profile (default:png)
 plot_conlen() | CPContigSizeDist.txt | Contig Size distribution
-plot_conlen() | "CPGene"_Contig_Dist.png | CP gene contig length distribution (for each CP gene a seperate disribution plot is generated. Default image format: png)
+plot_conlen() | "CPGene"_Contig_Dist.png | CP gene contig length distribution (for each CP gene a separate distribution plot is generated. Default image format: png)
 upsetR_plot() | cp_presence-absence_matrix.csv | Presence-absence matrix of CP genes across assemblies
 upsetR_plot() | upset_plot.pdf | Set intersection plot of CP genes across all the input genome assemblies
-assemblystat() | N50_N90.pdf | N50, N90 vs Assembly Size plot
+assemblystat() | N50_N90.pdf | Assembly Size vs N50, N90 plots
 assemblystat() | assemblyStats.txt | A simple text file with N50, N90, Assembly Size for each assembly
 cp_summarize() | SummaryPlots.pdf | All the plots in a single pdf file
 
