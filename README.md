@@ -100,25 +100,25 @@ Ensure you have installed the package properly:
 cpblast(fastalocation = "/home/user/CPgeneProfiler/testData/fasta", dblocation = "/home/user/CPgeneProfiler/testData/db")
 
 ```
-- Filtering NCBI BLAST Results based on CP gene coverage and percent identity
+- Filtering NCBI BLAST Results based on CP gene coverage and percent identity. By default, alignment coverage of CP gene (`cpgcov`) and percentage identity (`cpgpident`) are set to 100%.
 
 ``` r
 filt_blast(cpgcov = 100, cpgpident = 100)
 ```
 
-- Report cocarriage of CP genes across all the input genome assemblies
+- Report cocarriage of CP genes across all the input genome assemblies (Default:`cpgcov = 100` and `cpgpident = 100`)
 
 ``` r
 cocarriage(cpgcov = 100, cpgpident = 100)
 ```
 
-- Generate CP gene Profile across all the input genome assemblies
+- Generate CP gene Profile across all the input genome assemblies (Default:`cpgcov = 100` and `cpgpident = 100`)
 
 ``` r
 cpprofile(xlab = "Carbapenamase Genes", ylab = "Assembly", title = "Carbapenamase Gene Profile Heatmap")
 ```
 
-- Plot CP gene contig length distributions across all the input genome assemblies
+- Plot CP gene contig length distributions across all the input genome assemblies (Default:`cpgcov = 100` and `cpgpident = 100`)
 
 ``` r
 plot_conlen(outputType = "png", xlab = "Contig Length", ylab = "Number of Contigs", title = " Contig Length Distribution", colorfill = "#F99245")
@@ -302,8 +302,23 @@ assemblystat() | N50_N90.pdf | Assembly Size vs N50, N90 plots
 assemblystat() | assemblyStats.txt | A simple text file with N50, N90, Assembly Size for each assembly
 cp_summarize() | SummaryPlots.pdf | All the plots in a single pdf file
 
-## A few example plots created with `CPgeneProfiler`
-<img src="https://user-images.githubusercontent.com/3212461/90124520-1c1fd280-dd93-11ea-9ce3-f55ccf583b45.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124524-1cb86900-dd93-11ea-8960-53fa7a19aac9.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124487-10cca700-dd93-11ea-9572-dfc44a190dd6.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124536-1f1ac300-dd93-11ea-9acc-9435b79a7f1c.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124507-17f3b500-dd93-11ea-9f37-6167ec79b8a1.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90124510-188c4b80-dd93-11ea-8609-1d3fbfc3ef43.png" width="45%"></img> 
+## A few example plots 
+
+# `CP Gene Profile HeatMap`
+<img src="https://user-images.githubusercontent.com/3212461/90596495-a946a980-e221-11ea-9904-88d5b5c66cc7.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90596501-aba90380-e221-11ea-9cbb-062031eb8618.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90596505-ad72c700-e221-11ea-8340-db09e1061353.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90596508-aea3f400-e221-11ea-89a2-562aa408cbdf.png" width="45%"></img> 
+
+# `Assembly Size vs N50 and N90 plots`
+
+<img src="https://user-images.githubusercontent.com/3212461/90124520-1c1fd280-dd93-11ea-9ce3-f55ccf583b45.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90124524-1cb86900-dd93-11ea-8960-53fa7a19aac9.png" width="45%"></img> 
+
+# `UpsetR plot`
+<img src="https://user-images.githubusercontent.com/3212461/90124487-10cca700-dd93-11ea-9572-dfc44a190dd6.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90124536-1f1ac300-dd93-11ea-9acc-9435b79a7f1c.png" width="45%"></img>
+
+# `Contig Length Distribution Plots`
+<img src="https://user-images.githubusercontent.com/3212461/90124507-17f3b500-dd93-11ea-9f37-6167ec79b8a1.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90124510-188c4b80-dd93-11ea-8609-1d3fbfc3ef43.png" width="45%"></img> 
 
 Figures: 1) Assembly Size vs N50 plot (Top left) 2) Assembly Size vs N90 plot (Top Right) 3) Carbapenamase Gene Profile CP gene-containing contig length plots KPC (Middle left) 4) Set intersection plot of CP genes across all the input genome assemblies (Middle right) 5-6) CP gene contig length distribution (Bottom right)
 
