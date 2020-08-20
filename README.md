@@ -76,6 +76,16 @@ install.packages(c("tidyverse", "UpSetR", "scales", "ape",
     
  	  Note 2: BLAST version 2.9.0+ was used for the present program although other BLAST+ similar to version 2.9.0+ parameters might also run without problems
     
+- **CP gene Database Download (REQUIRED)**
+
+	- Go to the UNIX/Linux command line terminal and download the `db` folder with SVN
+
+	```
+	svn export https://github.com/ramadatta/CPgeneProfiler/trunk/testData/db
+	```
+	
+	- else simply [Click](https://downgit.github.io/#/home?url=https://github.com/ramadatta/CPgeneProfiler/tree/master/testData/db) to save database folder and uncompress the `db.zip` folder.    
+    
 #### **Installation**
 
 ##### **From Github**
@@ -150,16 +160,7 @@ db_summary()
 
 ### **Working with `testData`**
 
-#### **CP gene Database Download (REQUIRED)**
-
-Go to the UNIX/Linux command line terminal and download the `db` folder with SVN
-
-```
-svn export https://github.com/ramadatta/CPgeneProfiler/trunk/testData/db
-```
-else simply [Click](https://downgit.github.io/#/home?url=https://github.com/ramadatta/CPgeneProfiler/tree/master/testData/db) to save database folder and uncompress the `db.zip` folder.
-
-#### **Test Data Download (OPTIONAL)**
+#### **Test Data Download**
 
 To test the package with test input data, Go to the UNIX/Linux command line terminal and download the `fasta` folder with SVN
 
