@@ -40,15 +40,17 @@ Generate a profile of carbapenamase genes from the genome assemblies
 	 UpSetR,
 	 scales,
 	 ape,
+	 BiocManager,
 	 Biostrings,
 	 reshape2,
 	 gridExtra
 
-Install these packages using:
+Install these packages using R (>=3.5):
 	
 ``` r
-install.packages(c("tidyverse", "UpSetR", "scales", "ape", 
-                    "Biostrings", "reshape2", "gridExtra"))
+install.packages(c("BiocManager", "tidyverse", "UpSetR", "scales", "ape", 
+                    "reshape2", "gridExtra"))
+BiocManager::install("Biostrings")
 ```	 
 
 - **External software (REQUIRED):** [NCBI BLAST 2.9.0+](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download)
