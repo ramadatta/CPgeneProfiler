@@ -12,11 +12,11 @@ Generate a profile of carbapenamase genes from the genome assemblies
 ##### **Synopsis**
 
 1) **CPgeneProfiler** package checks for a list of CarbaPenamase (CP) genes from a list of
- genome assemblies provided in fasta file format. The CP genes are derived from ARG-annot
- database.
+ genome assemblies provided in FASTA file format. The CP genes are derived from NCBI 
+ Bacterial Antimicrobial Resistance Reference Gene Database.
  
 2) It reports the profile of all the CP genes available in the genome assemblies
- in the format of simple heatmap.
+ in the form of simple heatmap.
  
 3) Apart from this, it also reports the presence of cocarriage of CP genes within
  an assembly. 
@@ -30,12 +30,12 @@ Generate a profile of carbapenamase genes from the genome assemblies
  
 ##### **Input Requirements**
 * Path of a directory with multiple FASTA files (can be in multiple contigs) 
-* Path of Carbapenamase Gene Database directory
+* Path of Carbapenamase Gene Database file (FASTA) directory
 
  
 ##### **Requirements**
 
-- **R packages:**
+- **R packages (REQUIRED):**
 	 tidyverse,
 	 UpSetR,
 	 scales,
@@ -43,27 +43,16 @@ Generate a profile of carbapenamase genes from the genome assemblies
 	 Biostrings,
 	 reshape2,
 	 gridExtra
-	 
-- **External software:** NCBI BLAST+ 
 
-    Note 1: R package assumes `blastn` and `makeblastdb` files are in path
-    
-    Note 2: BLAST version 2.9.0+ was used for the present program although other BLAST+ similar to version 2.9.0+ parameters might also run without problems
-    
-#### **Installation**
+Install these packages using:
+	
+``` r
+install.packages(c("tidyverse", "UpSetR", "scales", "ape", 
+                    "Biostrings", "reshape2", "gridExtra"))
+```	 
 
-##### **From Github**
-
-The R package is available through github repository can be installed using devtools.
-
-``` r 
-install.packages("devtools")
-devtools::install_github("ramadatta/CPgeneProfiler")
-library("CPgeneProfiler")
-```
-
-##### **External software (REQUIRED)** 
-
+- **External software (REQUIRED):** [NCBI BLAST 2.9.0+](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download)
+   
 - Go to page: https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.9.0/
 
 - Save `ncbi-blast-2.9.0+-x64-linux.tar.gz` in the local directory
@@ -81,11 +70,26 @@ export PATH=$PATH:$HOME/ncbi-blast-2.9.0+/bin
 ```
 - Refer [here](https://www.ncbi.nlm.nih.gov/books/NBK52640/) for source documentation
 
+  Note 1: R package assumes `blastn` and `makeblastdb` files are in path
+    
+  Note 2: BLAST version 2.9.0+ was used for the present program although other BLAST+ similar to version 2.9.0+ parameters might also run without problems
+    
+#### **Installation**
+
+##### **From Github**
+
+The R package is available through github repository can be installed using devtools.
+
+``` r 
+install.packages("devtools")
+devtools::install_github("ramadatta/CPgeneProfiler")
+```
 
 ##### **Check installation**
 Ensure you have installed the package properly:
 
 ``` r
+library("CPgeneProfiler")
 ?CPgeneProfiler
 ```
 
