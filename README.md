@@ -53,26 +53,28 @@ install.packages(c("tidyverse", "UpSetR", "scales", "ape",
 
 - **External software (REQUIRED):** [NCBI BLAST 2.9.0+](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download)
    
-- Go to page: https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.9.0/
+	- Go to page: https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.9.0/
 
-- Save `ncbi-blast-2.9.0+-x64-linux.tar.gz` in the local directory
+	- Save `ncbi-blast-2.9.0+-x64-linux.tar.gz` in the local directory
 
-- To install, simply extract the downloaded package using the following command
+	- To install, simply extract the downloaded package using the following command
 
-```
-tar zxvpf ncbi-blast-2.9.0+-x64-linux.tar.gz
-```
+	```
+	tar zxvpf ncbi-blast-2.9.0+-x64-linux.tar.gz
+	```
 
-- Configure of NCBI BLAST+ executables using the following command. This would append the path to the new BLAST bin directory to the existing PATH setting.
+	- Configure of NCBI BLAST+ executables using the following command. This would append the path to the new BLAST bin directory to the existing PATH setting.
 
-```
-export PATH=$PATH:$HOME/ncbi-blast-2.9.0+/bin
-```
-- Refer [here](https://www.ncbi.nlm.nih.gov/books/NBK52640/) for source documentation
 
-  Note 1: R package assumes `blastn` and `makeblastdb` files are in path
+	```
+	export PATH=$PATH:$HOME/ncbi-blast-2.9.0+/bin
+	```
+	
+	- Refer [here](https://www.ncbi.nlm.nih.gov/books/NBK52640/) for source documentation
+
+	  Note 1: R package assumes `blastn` and `makeblastdb` files are in path
     
-  Note 2: BLAST version 2.9.0+ was used for the present program although other BLAST+ similar to version 2.9.0+ parameters might also run without problems
+ 	  Note 2: BLAST version 2.9.0+ was used for the present program although other BLAST+ similar to version 2.9.0+ parameters might also run without problems
     
 #### **Installation**
 
