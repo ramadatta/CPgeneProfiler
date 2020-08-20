@@ -44,12 +44,18 @@ Generate a profile of carbapenamase genes from the genome assemblies
 	 Biostrings,
 	 reshape2,
 	 gridExtra
-
+	 png, 
+	 tiff,
+	 jpeg,
+	 pdftools,
+	 grid
+	 
 Install these packages using R (>=3.5):
 	
 ``` r
 install.packages(c("BiocManager", "tidyverse", "UpSetR", "scales", "ape", 
-                    "reshape2", "gridExtra"))
+                    "reshape2", "gridExtra","png", "tiff", "jpeg", "pdftools", "grid"))
+
 BiocManager::install("Biostrings")
 ```	 
 
