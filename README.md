@@ -332,7 +332,7 @@ cp_summarize() | SummaryPlots.pdf | All the plots in a single pdf file
 <img src="https://user-images.githubusercontent.com/3212461/90953985-dce43680-e4a2-11ea-91ba-750b72e731dd.png" width="45%"></img> 
 <img src="https://user-images.githubusercontent.com/3212461/90953986-de156380-e4a2-11ea-8755-337b95ec4662.png" width="45%"></img> 
 
-# `UpsetR plot`
+# `UpsetR plot` (orderby: freq vs degree)
 <img src="https://user-images.githubusercontent.com/3212461/90954026-52500700-e4a3-11ea-9b1c-ad87b04c845b.png" width="45%"></img> 
 <img src="https://user-images.githubusercontent.com/3212461/90124536-1f1ac300-dd93-11ea-9acc-9435b79a7f1c.png" width="45%"></img>
 
