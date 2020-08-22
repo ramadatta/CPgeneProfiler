@@ -320,22 +320,29 @@ cp_summarize() | SummaryPlots.pdf | All the plots in a single pdf file
 ## A few example plots 
 
 # `CP Gene Profile HeatMap`
-<img src="https://user-images.githubusercontent.com/3212461/90596495-a946a980-e221-11ea-9904-88d5b5c66cc7.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90596501-aba90380-e221-11ea-9cbb-062031eb8618.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90596505-ad72c700-e221-11ea-8340-db09e1061353.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/3212461/90596508-aea3f400-e221-11ea-89a2-562aa408cbdf.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90596495-a946a980-e221-11ea-9904-88d5b5c66cc7.png" width="45%"></img>
+<img src="https://user-images.githubusercontent.com/3212461/90596501-aba90380-e221-11ea-9cbb-062031eb8618.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90596505-ad72c700-e221-11ea-8340-db09e1061353.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90596508-aea3f400-e221-11ea-89a2-562aa408cbdf.png" width="45%"></img> 
 
 # `Assembly Size vs N50 and N90 plots`
 
 <img src="https://user-images.githubusercontent.com/3212461/90124520-1c1fd280-dd93-11ea-9ce3-f55ccf583b45.png" width="45%"></img> 
 <img src="https://user-images.githubusercontent.com/3212461/90124524-1cb86900-dd93-11ea-8960-53fa7a19aac9.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90953985-dce43680-e4a2-11ea-91ba-750b72e731dd.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90953986-de156380-e4a2-11ea-8755-337b95ec4662.png" width="45%"></img> 
 
 # `UpsetR plot`
-<img src="https://user-images.githubusercontent.com/3212461/90124487-10cca700-dd93-11ea-9572-dfc44a190dd6.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90954026-52500700-e4a3-11ea-9b1c-ad87b04c845b.png" width="45%"></img> 
 <img src="https://user-images.githubusercontent.com/3212461/90124536-1f1ac300-dd93-11ea-9acc-9435b79a7f1c.png" width="45%"></img>
 
 # `Contig Length Distribution Plots`
-<img src="https://user-images.githubusercontent.com/3212461/90124507-17f3b500-dd93-11ea-9f37-6167ec79b8a1.png" width="45%"></img> 
-<img src="https://user-images.githubusercontent.com/3212461/90124510-188c4b80-dd93-11ea-8609-1d3fbfc3ef43.png" width="45%"></img> 
-
-Figures: 1) Assembly Size vs N50 plot (Top left) 2) Assembly Size vs N90 plot (Top Right) 3) Carbapenamase Gene Profile CP gene-containing contig length plots KPC (Middle left) 4) Set intersection plot of CP genes across all the input genome assemblies (Middle right) 5-6) CP gene contig length distribution (Bottom right)
+<img src="https://user-images.githubusercontent.com/3212461/90124507-17f3b500-dd93-11ea-9f37-6167ec79b8a1.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90124510-188c4b80-dd93-11ea-8609-1d3fbfc3ef43.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90954140-69dbbf80-e4a4-11ea-95ec-03c398269f3a.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90953981-d6ee5580-e4a2-11ea-97a4-fe30ddabbd77.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90953983-d81f8280-e4a2-11ea-81af-84668ff530a5.png" width="30%"></img>
+<img src="https://user-images.githubusercontent.com/3212461/90953984-d8b81900-e4a2-11ea-9793-0e0026e7ba38.png" width="30%"></img> 
 
 ##### **Version**
 version 2.1.0
