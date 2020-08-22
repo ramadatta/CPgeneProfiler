@@ -280,7 +280,7 @@ cp_summarize(outdir = "CPgeneProfiler_Output", report="Summary" , image = "png")
 
 ##### **9) Find Database summary details using `db_summary()` command**
 
-`db_summary()` command displays the details of Database, which includes Database Name, Database Version, Total sequences in Databases, Date on which database was created, Database Reference location from where sequences are downloaded.
+`db_summary()` command displays the details of Database, which includes Database Name, Database Version, Total sequences in Databases, Date on which database was uploaded, Database Reference location from where sequences are downloaded.
 
 ``` r
 db_summary()
