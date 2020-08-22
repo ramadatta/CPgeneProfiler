@@ -170,7 +170,7 @@ svn export https://github.com/ramadatta/CPgeneProfiler/trunk/testData/fasta
 else simply [Click](https://downgit.github.io/#/home?url=https://github.com/ramadatta/CPgeneProfiler/tree/master/testData/fasta) to save fasta folder and uncompress the `fasta.zip` folder.
 
 
-##### **Step 1: A simple NCBI BLAST using `cpblast()` command**
+##### **1) A simple NCBI BLAST using `cpblast()` command**
 
 As a first step, CPgeneProfiler generates NCBI BLAST Results by aligning input genome assemblies against Carbapenamase (CP) gene database. Now that you already have a directory with fasta files (should have extensions `.fasta` or `.fa`) in `fasta` folder and cp gene database sequence in `db` folder, you can specify the path of both directories as an input and run the package with `cpblast()` command.
 
@@ -180,7 +180,7 @@ cpblast(fastalocation = "/home/user/CPgeneProfiler/testData/fasta", dblocation =
 The users can adjust BLAST parameters `num_threads`, `evalue`, `word_size` and `max_target_seqs` accordingly. If not adjusted and command is simply executed with the file locations for `fasta` and `db`, then default parameters are used for the analysis.
 
 
-##### **Step 2: Filtering BLAST results using `filt_blast()` command**
+##### **2) Filtering BLAST results using `filt_blast()` command**
 
 `filt_blast()` then filters the output BLAST results obtained from `cpblast()` command. This filtering is to find the presence of CP genes given a particular CP gene coverage and Percentage Identity. Therefore, the BLAST hits are filtered based on CP gene coverage and Percentage Identity. By default, CP Gene Coverage and Percentage Identity are set at a threshold of 100% (cpgcov=100, cpgpident=100). This means that a CP gene should have 100% alignment length and 100% identity, without even a single mismatch with the input genome sequence. The default parameters can be adjusted.
 
@@ -216,7 +216,7 @@ This should generate the following table:
 | genome_015.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 43441  | 44438  | 998  | 100 | 100 |
 | genome_015.fasta | 3_length=66727_depth=0.76x                | OXA-181 | 66727  | 998  | 37032  | 38029  | 998  | 100 | 100 |
 
-##### **Step 3c: Finding cocarriage genes using `cocarriage()` command**
+##### **3) Finding cocarriage genes using `cocarriage()` command**
 
 `cocarriage()` command finds if two or more CP genes exists in same contig or multiple contigs across all the input genome assemblies. This function can be used only after running `filt_blast()`. By default parameters, CP Gene Coverage and Percentage Identity are set to 100% (cpgcov=100, cpgpident=100) and can be adjusted.
 
@@ -224,7 +224,7 @@ This should generate the following table:
 cocarriage(cpgcov = 100, cpgpident = 100)
 ```
 
-##### **Step 3d: Finding CP gene profile using `cpprofile()` command**
+##### **4) Finding CP gene profile using `cpprofile()` command**
 
 `cpprofile()` creates a heatmap of CP gene profile across the input genome assemblies. By default, the command generates `png` image but user play with other output formats (jpeg/tiff/pdf) and parameters such as width, height of image, label, titles and colors of the heatmap.
 
@@ -235,7 +235,7 @@ cpprofile(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbap
 <img src="https://user-images.githubusercontent.com/3212461/90124487-10cca700-dd93-11ea-9572-dfc44a190dd6.png" width="45%"></img> 
 </p>
 
-##### **Step 3e: Plot CP gene contig length distribution using `plot_conlen()` command**
+##### **5) Plot CP gene contig length distribution using `plot_conlen()` command**
 
 `plot_conlen()` generates length distribution for all the CP gene contigs present across all the input genome assemblies.By default, the command generates `png` image but user play with other output formats (jpeg/tiff/pdf) and parameters such as width, height of image, label, titles and colors.
 
@@ -247,7 +247,7 @@ plot_conlen(outputType="tiff", width = 700, height = 700, res = 150, xlab="Conti
 <img src="https://user-images.githubusercontent.com/3212461/90124510-188c4b80-dd93-11ea-8609-1d3fbfc3ef43.png" width="45%"></img>
 </p>
 
-##### **Step 3f: Generate assembly statistics using `assemblystat()` command**
+##### **6) Generate assembly statistics using `assemblystat()` command**
 
 `assemblystat()` generates basic assembly stats which includes N50 size, N90 size and Genome assembly size. This function also generates Assembly Size vs N50 plot and Assembly Size vs N90 plot. This function requires the location of fasta file directory. By default, the command generates `png` image plots.
 
@@ -259,7 +259,7 @@ assemblystat("/home/user/CPgeneProfiler/testData/fasta", outputType="png", width
 <img src="https://user-images.githubusercontent.com/3212461/90954280-a6f48180-e4a5-11ea-93ad-908e0e339674.png" width="45%"></img>
 </p>
 
-##### **Step 3g: Generate Set Intersection of CP genes using `upsetR_plot()` command**
+##### **7) Generate Set Intersection of CP genes using `upsetR_plot()` command**
 
 `upsetR_plot()` generates set intersection plot of CP genes across all the input genome assemblies. By default, the command generates `png` image but user can change the output image type, width and height of image, label, titles and colors.
 
@@ -270,7 +270,7 @@ upsetR_plot(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carb
 <img src="https://user-images.githubusercontent.com/3212461/90124536-1f1ac300-dd93-11ea-9acc-9435b79a7f1c.png" width="45%"></img> 
 </p>
 
-##### **Step 3h: Summarize all the results using `cp_summarize()` command**
+##### **8) Summarize all the results using `cp_summarize()` command**
 
 `cp_summarize()` arranges all the output files generated from above commands into respective folders. This also creates a summary of all the plots from CPgeneProfiler output into a single PDF file. Users can specify the output directory name and summary pdf name and also can provide the location of where the output folder to be generated. Note: All the output image plots need to be in the same format i.e, either png/tiff/jpeg.
 
@@ -278,12 +278,18 @@ upsetR_plot(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carb
 cp_summarize(outdir = "CPgeneProfiler_Output", report="Summary" , image = "png")
 ```
 
-##### **Step 3i: Find Database summary details using `db_summary()` command**
+##### **9) Find Database summary details using `db_summary()` command**
 
 `db_summary()` command displays the details of Database, which includes Database Name, Database Version, Total sequences in Databases, Date on which database was created, Database Reference location from where sequences are downloaded.
 
 ``` r
 db_summary()
+[1] "DATABASE: NCBI Bacterial Antimicrobial Resistance Reference Gene Database"
+[1] "VERSION: 2020-06-11.1"
+[1] "SEQUENCES: 1062"
+[1] "DBTYPE: nucl"
+[1] "DATE: 2020-Aug-04"
+[1] "Reference Gene Catalog: https://www.ncbi.nlm.nih.gov/pathogens/isolates#/refgene/"
 ```
 
 ##### **Output Files**
