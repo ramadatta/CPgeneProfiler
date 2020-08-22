@@ -263,8 +263,8 @@ plot_conlen(outputType="tiff", width = 700, height = 700, res = 150, xlab="Conti
 assemblystat("/home/user/CPgeneProfiler/testData/fasta", outputType="png", width = 700, height = 700, res = 150, geom_point_size=3, n50colorfill = "#0072B2", n90colorfill = "#D55E00")
 ```
 <p align="center">
-<img src="https://user-images.githubusercontent.com/3212461/90124520-1c1fd280-dd93-11ea-9ce3-f55ccf583b45.png" width="45%"></img> 
-<img src="https://user-images.githubusercontent.com/3212461/90124524-1cb86900-dd93-11ea-8960-53fa7a19aac9.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90954281-a825ae80-e4a5-11ea-863d-47678a00aba1.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90954280-a6f48180-e4a5-11ea-93ad-908e0e339674.png" width="45%"></img>
 </p>
 
 ##### **Step 3g: Generate Set Intersection of CP genes using `upsetR_plot()` command**
@@ -327,8 +327,8 @@ cp_summarize() | SummaryPlots.pdf | All the plots in a single pdf file
 
 # `Assembly Size vs N50 and N90 plots`
 
-<img src="https://user-images.githubusercontent.com/3212461/90124520-1c1fd280-dd93-11ea-9ce3-f55ccf583b45.png" width="45%"></img> 
-<img src="https://user-images.githubusercontent.com/3212461/90124524-1cb86900-dd93-11ea-8960-53fa7a19aac9.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90954281-a825ae80-e4a5-11ea-863d-47678a00aba1.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/3212461/90954280-a6f48180-e4a5-11ea-93ad-908e0e339674.png" width="45%"></img> 
 <img src="https://user-images.githubusercontent.com/3212461/90953985-dce43680-e4a2-11ea-91ba-750b72e731dd.png" width="45%"></img> 
 <img src="https://user-images.githubusercontent.com/3212461/90953986-de156380-e4a2-11ea-8755-337b95ec4662.png" width="45%"></img> 
 
