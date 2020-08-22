@@ -346,3 +346,15 @@ cp_summarize() | SummaryPlots.pdf | All the plots in a single pdf file
 
 ##### **Version**
 version 2.1.0
+
+### Contributing and Contact Information
+
+We are open to suggestions for improvements in ``CPgeneProfiler``. Therefore, we invite all users to post a question or to provide us with (either positive or negative) feedback on the functions available in ``CPgeneProfiler``. When filing an issue, the most important thing is to include a minimal reproducible example so that we can quickly verify the problem, and then figure out how to fix it. There are two things you may need to include to make your example reproducible: data and code. If you are using additional packages, we would need that information as well. 
+
+In addition, we welcome users who would like to contribute to the ``CPgeneProfiler`` package by adding new functions or co-developing some functions with us. You can let us know which function(s) you want to develop or which of the existing function(s) you want to improve. Please note that ``CPgeneProfiler`` is released with a [Contributor Code of Conduct](https://github.com/ramadatta/CPgeneProfiler/blob/master/Code_of_Conduct.md). By contributing to this project, you agree to abide by its terms.
+
+
+To get further help regarding the functions available in ``CPgeneProfiler`` or inquries regarding contributions, please email us:
+
+  - Prakki Sai Rama Sridatta (<ramadatta.88@gmail.com>)
+
