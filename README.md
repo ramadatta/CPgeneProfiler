@@ -339,7 +339,7 @@ cp_summarize() | SummaryPlots.pdf | All the plots in a single pdf file
 ##### **Version**
 version 2.1.0
 
-### Contributing and Contact Information
+#### Contributing and Contact Information
 
 We are open to suggestions for improvements in ``CPgeneProfiler``. Therefore, we invite all users to post a question or to provide us with (either positive or negative) feedback on the functions available in ``CPgeneProfiler``. When filing an issue, the most important thing is to include a minimal reproducible example so that we can quickly verify the problem, and then figure out how to fix it. There are two things you may need to include to make your example reproducible: data and code. If you are using additional packages, we would need that information as well. 
 
