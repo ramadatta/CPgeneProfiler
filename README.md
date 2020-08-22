@@ -1,13 +1,5 @@
----
-output:
-  html_document: default
-  pdf_document: default
----
 # CPgeneProfiler
 Generate a profile of carbapenamase genes from the genome assemblies
-
-## Author
-[Prakki Sai Rama Sridatta](https://twitter.com/prakki_rama)
 
 ##### **Synopsis**
 
@@ -354,7 +346,8 @@ We are open to suggestions for improvements in ``CPgeneProfiler``. Therefore, we
 In addition, we welcome users who would like to contribute to the ``CPgeneProfiler`` package by adding new functions or co-developing some functions with us. You can let us know which function(s) you want to develop or which of the existing function(s) you want to improve. Please note that ``CPgeneProfiler`` is released with a [Contributor Code of Conduct](https://github.com/ramadatta/CPgeneProfiler/blob/master/Code_of_Conduct.md). By contributing to this project, you agree to abide by its terms.
 
 
-To get further help regarding the functions available in ``CPgeneProfiler`` or inquries regarding contributions, please email us:
+To get further help regarding the functions available in ``CPgeneProfiler`` or inquries regarding contributions, please email:
 
-  - Prakki Sai Rama Sridatta (<ramadatta.88@gmail.com>)
+  - [Prakki Sai Rama Sridatta](https://twitter.com/prakki_rama) (<ramadatta.88@gmail.com>)
+  
 
