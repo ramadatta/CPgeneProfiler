@@ -15,7 +15,7 @@ db_summary <- function()
   print("VERSION: 2020-07-16.2")
   print("SEQUENCES: 875")
   print("DBTYPE: nucl")
-  print("DATE: 2020-Aug-23")
+  print("DATE UPLOADED: 2020-Aug-23")
   print("Reference Gene Catalog: ftp://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/3.8/")
 }
 
