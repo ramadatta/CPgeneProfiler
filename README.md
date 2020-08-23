@@ -343,7 +343,18 @@ cp_summarize() | SummaryPlots.pdf | All the plots in a single pdf file
 <img src="https://user-images.githubusercontent.com/3212461/90953984-d8b81900-e4a2-11ea-9793-0e0026e7ba38.png" width="30%"></img> 
 
 ##### **Version**
+
+version 2.1.1
+
+- Modularised single function to multiple functions
+- Added more flexibility to each function
+- Changed the database from ARG-ANNOT to NCBI Bacterial AMR Reference Gene Database
+
 version 2.1.0
+
+- Changed the heatmap colors
+- User can decide to download the ARG-annot database to desired location
+- Both fasta folder and db location are to be provided for the package
 
 # Community Guidelines
 
