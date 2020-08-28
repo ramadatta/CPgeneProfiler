@@ -78,7 +78,24 @@ BiocManager::install("Biostrings")
     
 - **CP gene Database Download (REQUIRED)**
 
-	- Go to the UNIX/Linux command line terminal and download the `db` folder with SVN
+The CP gene database can be downloaded either of the following 3 ways:
+
+	- Using *R* console
+	
+	``` r
+	# Specify CP gene database URL 
+	url <- "https://raw.githubusercontent.com/ramadatta/CPgeneProfiler/master/testData/db/NCBI_BARRGD_CPG_DB.fasta"
+
+	# Specify destination where CP gene database file should be saved 
+	path <- "/home/user/db" # Can change to prefarable location
+	setwd(path)
+	destfile <- "NCBI_BARRGD_CPG_DB.fasta"
+
+	# Download the CP gene database file to the folder set in "path"
+	download.file(url, destfile)
+	```
+
+	- Using *UNIX/Linux* command line terminal and download the `db` folder with SVN
 
 	```
 	svn export https://github.com/ramadatta/CPgeneProfiler/trunk/testData/db
