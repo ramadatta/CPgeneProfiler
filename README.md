@@ -100,7 +100,7 @@ download.file(url, destfile)
 ```
 svn export https://github.com/ramadatta/CPgeneProfiler/trunk/testData/db
 ```
-- else simply [Click](https://downgit.github.io/#/home?url=https://github.com/ramadatta/CPgeneProfiler/tree/master/testData/db) to save database folder and uncompress the `db.zip` folder.    
+- Else, simply [Click](https://downgit.github.io/#/home?url=https://github.com/ramadatta/CPgeneProfiler/tree/master/testData/db) to save database folder and uncompress the `db.zip` folder.    
     
 #### **Installation**
 
