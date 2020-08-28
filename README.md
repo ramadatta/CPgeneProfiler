@@ -78,30 +78,29 @@ BiocManager::install("Biostrings")
     
 - **CP gene Database Download (REQUIRED)**
 
-The CP gene database can be downloaded either of the following 3 ways:
+ The CP gene database can be downloaded either of the following 3 ways:
 
-	- Using *R* console
+- Using **R** console
 	
-	``` r
-	# Specify CP gene database URL 
-	url <- "https://raw.githubusercontent.com/ramadatta/CPgeneProfiler/master/testData/db/NCBI_BARRGD_CPG_DB.fasta"
+``` r 	
+# Specify CP gene database URL 
+url <- "https://raw.githubusercontent.com/ramadatta/CPgeneProfiler/master/testData/db/NCBI_BARRGD_CPG_DB.fasta"
 
-	# Specify destination where CP gene database file should be saved 
-	path <- "/home/user/db" # Can change to prefarable location
-	setwd(path)
-	destfile <- "NCBI_BARRGD_CPG_DB.fasta"
+# Specify destination where CP gene database file should be saved 
+path <- "/home/user/db" # Can change to prefarable location
+setwd(path)
+destfile <- "NCBI_BARRGD_CPG_DB.fasta"
 
-	# Download the CP gene database file to the folder set in "path"
-	download.file(url, destfile)
-	```
+# Download the CP gene database file to the folder set in "path"
+download.file(url, destfile)
+```
 
-	- Using *UNIX/Linux* command line terminal and download the `db` folder with SVN
+- Using **UNIX/Linux** command line terminal and download the `db` folder with SVN
 
-	```
-	svn export https://github.com/ramadatta/CPgeneProfiler/trunk/testData/db
-	```
-	
-	- else simply [Click](https://downgit.github.io/#/home?url=https://github.com/ramadatta/CPgeneProfiler/tree/master/testData/db) to save database folder and uncompress the `db.zip` folder.    
+```
+svn export https://github.com/ramadatta/CPgeneProfiler/trunk/testData/db
+```
+- else simply [Click](https://downgit.github.io/#/home?url=https://github.com/ramadatta/CPgeneProfiler/tree/master/testData/db) to save database folder and uncompress the `db.zip` folder.    
     
 #### **Installation**
 
