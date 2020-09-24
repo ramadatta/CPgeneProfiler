@@ -1,6 +1,19 @@
 # CPgeneProfiler
 Generate a profile of carbapenamase genes from the genome assemblies
 
+## Content
+  * [Synopsis](#synopsis)
+  * [Input Requirements](#input-requirements)
+  * [Installation](#installation)
+  * [Example Usage](#example-usage)
+  * [Working with testData](#working-with-testdata)
+  * [Output Files](#output-files)
+  * [Version](#version)
+  * [A few example plots](#a-few-example-plots)
+  * [Community Guidelines ](#community-guidelines)
+  * [Bug Report and Support Request](#bug-report-and-support-request)
+
+
 ##### **Synopsis**
 
 1) **CPgeneProfiler** package checks for a list of CarbaPenamase (CP) genes from a list of
