@@ -55,7 +55,7 @@ Generate a profile of carbapenamase genes from the genome assemblies
 	 pdftools,
 	 grid
 	 
-Install these packages using R (versions 3.5 & 3.6):
+Install these packages using R (versions >=3.6):
 	
 ``` r
 install.packages(c("BiocManager", "tidyverse", "UpSetR", "scales", "ape", 
