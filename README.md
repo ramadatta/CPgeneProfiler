@@ -314,11 +314,11 @@ cp_summarize(outdir = "CPgeneProfiler_Output", report="Summary" , image = "png")
 ``` r
 db_summary()
 [1] "DATABASE: NCBI Bacterial Antimicrobial Resistance Reference Gene Database"
-[1] "VERSION: 2020-06-11.1"
-[1] "SEQUENCES: 1062"
+[1] "VERSION: 2020-07-16.2"
+[1] "SEQUENCES: 875"
 [1] "DBTYPE: nucl"
-[1] "DATE: 2020-Aug-04"
-[1] "Reference Gene Catalog: https://www.ncbi.nlm.nih.gov/pathogens/isolates#/refgene/"
+[1] "DATE: 2020-Aug-23"
+[1] "Reference Gene Catalog: ftp://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/3.8/"
 ```
 
 ##### **Output Files**
