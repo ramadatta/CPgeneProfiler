@@ -168,7 +168,11 @@ cpprofile(xlab = "Carbapenamase Genes", ylab = "Assembly", title = "Carbapenamas
 ``` r
 plot_conlen(outputType = "png", xlab = "Contig Length", ylab = "Number of Contigs", title = " Contig Length Distribution", colorfill = "#F99245")
 ```
+- Generate set intersection plot of CP genes across all the input genome assemblies (Default:`cpgcov = 100` and `cpgpident = 100`)
 
+``` r
+upsetR_plot(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbapenamase Gene Set Size", ylab="Number of genome assemblies",cpgcov=100, cpgpident=100, order.by = "degree",nsets = 40, number.angles = 0,point.size = 1.5, line.size = 1,sets.bar.color = "red")
+```
 - Generate basic assembly statistics such N50, N90 and Assembly Size and plots comparing Assembly Size with N50, N90 stats
 
 ``` r
