@@ -7,7 +7,7 @@ tags:
 - cocarriage
 - Beta-lactamases
 - Antimicrobial resistance (AMR)
-date: "13 June 2020"
+date: "06 Oct 2020"
 output:
   rticles::joss_article: default
   pdf_document: default
