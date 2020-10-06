@@ -35,7 +35,7 @@ Generate a profile of carbapenamase genes from the genome assemblies
  
 ##### **Input Requirements**
 * Path of a directory with multiple FASTA files (can be in multiple contigs) 
-* Path of Carbapenamase Gene Database file (FASTA) directory
+* Path of Carbapenemase Gene Database file (FASTA) directory
 
  
 ##### **Requirements**
