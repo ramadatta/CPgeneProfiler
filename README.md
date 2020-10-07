@@ -251,7 +251,7 @@ This should generate the following table:
 
 ##### **3) Finding cocarriage genes using `cocarriage()` command**
 
-`cocarriage()` command finds if two or more CP genes exists in same contig or multiple contigs across all the input genome assemblies. This function can be used only after running `filt_blast()`. By default parameters, CP Gene Coverage and Percentage Identity are set to 100% (cpgcov=100, cpgpident=100) and can be adjusted.
+`cocarriage()` command finds if two or more CP genes exists in same contig or multiple contigs across all the input genome assemblies. This function can be used only after running `filt_blast()`. By default, parameters such as CP Gene Coverage and Percentage Identity are set to 100% (cpgcov=100, cpgpident=100) but can be adjusted as per requirement.
 
 ``` r
 cocarriage(cpgcov = 100, cpgpident = 100)
@@ -259,7 +259,7 @@ cocarriage(cpgcov = 100, cpgpident = 100)
 
 ##### **4) Finding CP gene profile using `cpprofile()` command**
 
-`cpprofile()` creates a heatmap of CP gene profile across the input genome assemblies. By default, the command generates `png` image but user play with other output formats (jpeg/tiff/pdf) and parameters such as width, height of image, label, titles and colors of the heatmap.
+`cpprofile()` creates a heatmap of CP gene profile across the input genome assemblies. By default, the command generates `png` image but user can also create image with other output formats (jpeg/tiff/pdf) and parameters such as width, height of image, label, titles and colors of the heatmap can be adjusted as per requirement.
 
 ``` r
 cpprofile(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbapenamase Genes", ylab="Assembly", title="Carbapenamase Gene Profile Heatmap", titlesize=15, labelsize=12, colorcode_low = "#143D59", colorcode_high = "#F4B41A", cpgcov=100, cpgpident=100)
@@ -270,7 +270,7 @@ cpprofile(outputType="png", width = 2000, height = 2000, res = 250, xlab="Carbap
 
 ##### **5) Plot CP gene contig length distribution using `plot_conlen()` command**
 
-`plot_conlen()` generates length distribution for all the CP gene contigs present across all the input genome assemblies.By default, the command generates `png` image but user play with other output formats (jpeg/tiff/pdf) and parameters such as width, height of image, label, titles and colors.
+`plot_conlen()` generates length distribution for all the CP gene contigs present across all the input genome assemblies. By default, the command generates `png` image but user can also create image with other output formats (jpeg/tiff/pdf) and parameters such as width, height of image, label, titles and colors of the heatmap can be adjusted as per requirement.
 
 ``` r
 plot_conlen(outputType="tiff", width = 700, height = 700, res = 150, xlab="Contig Length", ylab="Number of Contigs", title=" Contig Length Distribution",element_text_angle=90,unit="KB", breaks=15, colorfill = "#F99245",cpgcov=100, cpgpident=100)
@@ -282,7 +282,7 @@ plot_conlen(outputType="tiff", width = 700, height = 700, res = 150, xlab="Conti
 
 ##### **6) Generate assembly statistics using `assemblystat()` command**
 
-`assemblystat()` generates basic assembly stats which includes N50 size, N90 size and Genome assembly size. This function also generates Assembly Size vs N50 plot and Assembly Size vs N90 plot. This function requires the location of fasta file directory. By default, the command generates `png` image plots.
+`assemblystat()` generates basic assembly stats which includes N50 size, N90 size and Genome assembly size. This function also generates Assembly Size vs N50 & Assembly Size vs N90 plots. This function requires the location of fasta file directory. By default, the command generates `png` image plots.
 
 ``` r
 assemblystat("/home/user/CPgeneProfiler/testData/fasta", outputType="png", width = 700, height = 700, res = 150, geom_point_size=3, n50colorfill = "#0072B2", n90colorfill = "#D55E00")
@@ -313,7 +313,7 @@ cp_summarize(outdir = "CPgeneProfiler_Output", report="Summary" , image = "png")
 
 ##### **9) Find Database summary details using `db_summary()` command**
 
-`db_summary()` command displays the details of Database, which includes Database Name, Database Version, Total sequences in Databases, Date on which database was uploaded, Database Reference location from where sequences are downloaded.
+`db_summary()` command displays the details of Database. This includes Database Name, Version, Total number of sequences in currently in CP gene Database, Latest data updated, Reference web link from which database was downloaded.
 
 ``` r
 db_summary()
