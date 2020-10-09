@@ -16,21 +16,16 @@ Generate a profile of carbapenamase genes from the genome assemblies
 
 ##### **Synopsis**
 
-1) **CPgeneProfiler** package checks for a list of CarbaPenamase (CP) genes from a list of
- genome assemblies provided in FASTA file format. The CP genes are derived from NCBI 
- Bacterial Antimicrobial Resistance Reference Gene Database.
- 
-2) It reports the profile of all the CP genes available in the genome assemblies
- in the form of simple heatmap.
- 
-3) Apart from this, it also reports the presence of cocarriage of CP genes within
- an assembly. 
- 
-4) Other assembly statistics such as N50, N90, Assembly Size from the
- assembly are calculated and plots of length distribution of CP gene contigs from
+Current AMR detection tools generate comparative tables across genomes and can help in visualization of comprehensive AMR gene complement. Nevertheless, they do not readily generate a genetic profile for the presence of CP genes, extract and visualize the cocarriage of CP genes. Achieving this currently necessitates a restructuring and transformation of the output from these tools. 
+
+To address this need, we describe here a lightweight R package, CPgeneProfiler that scans multiple bacterial genome assemblies to detect and visualize the presence of CP genes and their cocarriage using the R framework. Input required is a directory of FASTA file with genome assemblies.
+
+Additionally, this package also allows to assess the size of CP contigs to check if the CP genes are distributed on the particular sequence size by generating the contig length distribution plots.
+
+Other assembly statistics such as N50, N90, Assembly Size from the assembly are calculated and plots of length distribution of CP gene contigs from
  the list of assemblies are reported.  
  
- Currently the package works only on Unix systems.
+Currently the package works only on Unix systems.
  
  
 ##### **Input Requirements**
