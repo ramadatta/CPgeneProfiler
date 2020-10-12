@@ -70,7 +70,7 @@ Visualizing the presence of CP genes and their corresponding counts across all t
 
 Given a set of bacterial genomes that are of same species, it would be useful to explore if the CP genes are found on specific plasmids or scattered across multiple plasmids/chromosomes of different sequence lengths. This can be achieved by plotting the number of contigs across the contig length by using the ``plot_conlen`` command (Figure 2). 
 
-Lastly, ``CPgeneProfiler`` can also generate the N50 and N90 assembly size statistics for each of the genome assemblies and also plots the assembly size against N50 and N90 using the ``assembly_stat`` command (Figure 3A, 3B). This helps in quickly assessing and comparing the quality of the assembled genomes provided as an input. All the generated output files from various commands of the package are arranged accordingly into their respective folders using the ``cp_summarize`` command.
+Lastly, ``CPgeneProfiler`` can also generate the N50, N9, and assembly size statistics for each of the genome assemblies and also plots the assembly size against N50 and N90 using the ``assembly_stat`` command (Figure 3A, 3B). This helps in quickly assessing and comparing the quality of the assembled genomes provided as an input. All the generated output files from various commands of the package are arranged accordingly into their respective folders using the ``cp_summarize`` command.
 
 # Availability and Implementation
 
