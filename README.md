@@ -1,3 +1,5 @@
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.02473/status.svg)](https://doi.org/10.21105/joss.02473)
+
 # CPgeneProfiler
 Generate a profile of carbapenamase genes from the genome assemblies
 
@@ -399,4 +401,18 @@ Please note that ``CPgeneProfiler`` is released with a [Contributor Code of Cond
 
 You can use [issues](https://github.com/ramadatta/CPgeneProfiler/issues) to report bugs and seek support.
 Before creating any new issues, please check for similar ones in the issue list first. 
+
+## Citation
+
+If you publish the results of CPgeneProfiler, please also cite the following software and the database:
+
+Sridatta et al., (2020). CPgeneProfiler: A lightweight R package to profile the Carbapenamase genes from genome assemblies. Journal of Open Source Software, 5(54), 2473, https://doi.org/10.21105/joss.02473
+
+Camacho, C., Coulouris, G., Avagyan, V., Ma, N., Papadopoulos, J., Bealer, K., & Madden, T. L. (2009). BLAST+: Architecture and applications. BMC Bioinformatics, 10(1), 421.doi:10.1186/1471-2105-10-421
+
+Jake R Conway, Alexander Lex, Nils Gehlenborg, UpSetR: an R package for the visualization of intersecting sets and their properties, Bioinformatics, Volume 33, Issue 18, 15 September 2017, Pages 2938–2940, https://doi.org/10.1093/bioinformatics/btx364
+
+NCBI Bacterial Antimicrobial Resistance Reference Gene Database (https://www.ncbi.nlm.nih.gov/bioproject/PRJNA313047)
+
+
 
