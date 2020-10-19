@@ -34,7 +34,7 @@ Currently the package works only on Unix systems.
 * Path of a directory with multiple FASTA files (can be in multiple contigs) 
 * Path of Carbapenemase Gene Database file (FASTA) directory
 
-#### Conda
+#### Conda (https://anaconda.org/bioconda/cpgeneprofiler) 
 
 To install this package with conda run:
 ``` 
